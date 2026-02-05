@@ -39,7 +39,7 @@ body {
 .page {
   min-height: 100vh;
   background:
-    url('../assets/wallpaper.jpg') center/cover no-repeat fixed;
+    url('../assets/wallpaper.jpg?v=2') center/cover no-repeat fixed;
   background-color: var(--bg-primary);
 }
 

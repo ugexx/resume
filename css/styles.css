@@ -235,9 +235,6 @@ body {
   object-fit: cover;
 }
 
-.company-logo.king-kopy {
-  background: linear-gradient(135deg, var(--accent-purple) 0%, #6d28d9 100%);
-}
 
 .company-info {
   flex: 1;

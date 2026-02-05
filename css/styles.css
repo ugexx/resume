@@ -1018,7 +1018,7 @@ body {
   border-radius: 1px;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 768px) {
   .resume-window {
     width: 95vw;
@@ -1070,6 +1070,223 @@ body {
   .contact-pills {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .menu-bar {
+    display: none;
+  }
+
+  .dock {
+    display: none;
+  }
+
+  .desktop {
+    background: #fff;
+  }
+
+  .resume-window {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+    backdrop-filter: none;
+  }
+
+  .title-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 50px;
+    cursor: default;
+  }
+
+  .window-controls {
+    display: none;
+  }
+
+  .title {
+    position: relative;
+    left: 0;
+    transform: none;
+    font-size: 16px;
+  }
+
+  .window-body {
+    height: auto;
+  }
+
+  .content-area {
+    border-radius: 0;
+  }
+
+  .scroll-area {
+    padding: 16px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .resize-handle {
+    display: none;
+  }
+
+  /* Header adjustments */
+  .resume-section.header {
+    padding-bottom: 20px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+  }
+
+  .resume-section h1 {
+    font-size: 26px;
+  }
+
+  .resume-section .subtitle {
+    font-size: 15px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .contact-pills {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Career blocks */
+  .career-block {
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .company-header {
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+
+  .company-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .company-info h3 {
+    font-size: 16px;
+  }
+
+  .tenure {
+    font-size: 12px;
+  }
+
+  .promotion-badge {
+    display: block;
+    margin-left: 0;
+    margin-top: 6px;
+    width: fit-content;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline::before {
+    left: 4px;
+  }
+
+  .timeline-marker {
+    left: -20px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-content {
+    padding: 12px;
+  }
+
+  .role-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .role-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .role-title strong {
+    font-size: 14px;
+  }
+
+  .date-badge {
+    align-self: flex-start;
+  }
+
+  .role-summary {
+    font-size: 12px;
+  }
+
+  .timeline-content li {
+    font-size: 12px;
+  }
+
+  .tech-tags {
+    gap: 4px;
+  }
+
+  .tech-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* Skills */
+  .skills-card {
+    gap: 6px;
+  }
+
+  .skill-chip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  /* Section headers */
+  .resume-section h2 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .resume-section {
+    margin-bottom: 24px;
   }
 }
 

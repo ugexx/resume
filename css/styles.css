@@ -225,7 +225,14 @@ body {
 }
 
 .company-logo.guitar-center {
-  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  background: transparent;
+  overflow: hidden;
+}
+
+.company-logo.guitar-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .company-logo.king-kopy {

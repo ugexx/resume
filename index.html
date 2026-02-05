@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colton Fouch - Digital Workplace Engineer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="desktop">
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+      <div class="menu-left">
+        <div class="menu-item apple-menu">
+          <svg width="14" height="16" viewBox="0 0 384 512" fill="currentColor">
+            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+          </svg>
+        </div>
+        <div class="menu-item active"><strong>Finder</strong></div>
+        <div class="menu-item">File</div>
+        <div class="menu-item">Edit</div>
+        <div class="menu-item">View</div>
+        <div class="menu-item">Go</div>
+        <div class="menu-item">Window</div>
+        <div class="menu-item">Help</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-icon">🔋</span>
+        <span class="menu-icon">📶</span>
+        <span class="menu-icon">🔊</span>
+        <span id="clock"></span>
+        <span class="menu-icon control-center">⚙️</span>
+      </div>
+    </div>
+
+    <!-- Main Resume Window -->
+    <div class="window resume-window" id="resumeWindow">
+      <div class="title-bar">
+        <div class="window-controls">
+          <button class="control-btn close" title="Close"></button>
+          <button class="control-btn minimize" title="Minimize"></button>
+          <button class="control-btn zoom" title="Zoom"></button>
+        </div>
+        <div class="title">Colton Fouch - Resume</div>
+        <div class="title-bar-spacer"></div>
+      </div>
+      <div class="window-body">
+        <div class="content-area full-width">
+          <div class="scroll-area">
+            <!-- Header Section -->
+            <section class="resume-section header">
+              <div class="avatar">
+                <span>CF</span>
+              </div>
+              <h1>Colton Fouch</h1>
+              <p class="subtitle">Digital Workplace Engineer</p>
+              <div class="contact-pills">
+                <span class="pill">
+                  <span class="pill-icon">📍</span>
+                  Ventura, California
+                </span>
+              </div>
+              <div class="social-links">
+                <a href="mailto:info@coltonfouch.com" class="social-btn email">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                  Email
+                </a>
+                <a href="https://www.linkedin.com/in/coltonfouch" class="social-btn linkedin">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  LinkedIn
+                </a>
+                <a href="https://signal.me/#eu/tdgCodHxdJTHkktgoJU6l8cUGc-MLY6aOUVkTWt9rJpZhwNolrVP4qyXWvJm9zB2" class="social-btn signal">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.12-1.32A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.57 0-3.05-.46-4.3-1.25l-.3-.18-3.12.82.83-3.04-.2-.31A7.9 7.9 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                  Signal
+                </a>
+              </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="resume-section">
+              <h2>About</h2>
+              <div class="card">
+                <p>Global Digital Workplace Engineer with 7+ years of experience specializing in enterprise device management, workflow optimization, and live streaming support. Skilled in managing Jamf Pro, Microsoft Intune, and Active Directory environments to ensure seamless operations across macOS, iOS, and Windows platforms.</p>
+              </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="resume-section experience-section">
+              <h2>Experience</h2>
+
+              <!-- Patagonia Career Block -->
+              <div class="career-block">
+                <div class="company-header">
+                  <div class="company-logo patagonia">
+                    <svg viewBox="0 0 100 40" fill="currentColor">
+                      <!-- Patagonia Fitz Roy mountain range silhouette -->
+                      <path d="M0 40 L8 28 L12 32 L18 20 L22 26 L28 14 L32 18 L38 8 L42 12 L50 2 L58 12 L62 8 L68 18 L72 14 L78 26 L82 20 L88 32 L92 28 L100 40 Z"/>
+                    </svg>
+                  </div>
+                  <div class="company-info">
+                    <h3>Patagonia</h3>
+                    <span class="tenure">7+ years · Ventura, CA</span>
+                    <span class="promotion-badge">↑ 3 Promotions</span>
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-item current">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <div class="role-header">
+                        <div class="role-title">
+                          <strong>Digital Workplace Engineer</strong>
+                          <span class="level-badge senior">Senior</span>
+                        </div>
+                        <span class="date-badge">Oct 2023 - Present</span>
+                      </div>
+                      <p class="role-summary">Leading enterprise device management and live streaming infrastructure for global workforce.</p>
+                      <ul>
+                        <li>Architect and manage Jamf Pro & Microsoft Intune for enterprise-wide device fleet</li>
+                        <li>Design automated workflows for macOS, iOS, and iPadOS deployment</li>
+                        <li>Own end-to-end device lifecycle management and patch compliance</li>
+                        <li>Provide tier 3 escalation support for complex technical issues</li>
+                        <li>Engineer live streaming solutions for company town halls using OBS, Teams & ProPresenter</li>
+                      </ul>
+                      <div class="tech-tags">
+                        <span class="tech-tag">Jamf Pro</span>
+                        <span class="tech-tag">Intune</span>
+                        <span class="tech-tag">Active Directory</span>
+                        <span class="tech-tag">OBS</span>
+                        <span class="tech-tag">ProPresenter</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <div class="role-header">
+                        <div class="role-title">
+                          <strong>IT System Administrator II</strong>
+                          <span class="level-badge mid">Mid-Level</span>
+                        </div>
+                        <span class="date-badge">Oct 2022 - Oct 2023</span>
+                      </div>
+                      <p class="role-summary">Promoted to lead system administration responsibilities and expand device management scope.</p>
+                      <div class="tech-tags">
+                        <span class="tech-tag">Jamf Pro</span>
+                        <span class="tech-tag">SCCM</span>
+                        <span class="tech-tag">Intune</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <div class="role-header">
+                        <div class="role-title">
+                          <strong>IT Systems Analyst</strong>
+                          <span class="level-badge entry">Entry</span>
+                        </div>
+                        <span class="date-badge">Sep 2018 - Oct 2022</span>
+                      </div>
+                      <p class="role-summary">First role at Patagonia supporting HQ and North America remote employees.</p>
+                      <ul>
+                        <li>Provided technical support via Zendesk ticket system</li>
+                        <li>Managed devices across Jamf Pro, SCCM, and Microsoft Intune</li>
+                      </ul>
+                      <div class="tech-tags">
+                        <span class="tech-tag">Zendesk</span>
+                        <span class="tech-tag">Jamf Pro</span>
+                        <span class="tech-tag">SCCM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guitar Center -->
+              <div class="career-block">
+                <div class="company-header">
+                  <div class="company-logo guitar-center">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <!-- Music note -->
+                      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                  </div>
+                  <div class="company-info">
+                    <h3>Guitar Center</h3>
+                    <span class="tenure">2 years · Westlake Village, CA</span>
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <div class="role-header">
+                        <div class="role-title">
+                          <strong>IT Helpdesk Technician</strong>
+                        </div>
+                        <span class="date-badge">Oct 2016 - Sep 2018</span>
+                      </div>
+                      <p class="role-summary">Desktop support for corporate office and nationwide remote workforce.</p>
+                      <ul>
+                        <li>Delivered multi-channel support via phone, email, IM, and walk-up</li>
+                        <li>Managed Active Directory: password resets, security groups, user provisioning</li>
+                        <li>Administered Jamf Pro for Mac device management</li>
+                        <li>Participated in on-call rotation for after-hours support</li>
+                      </ul>
+                      <div class="tech-tags">
+                        <span class="tech-tag">Active Directory</span>
+                        <span class="tech-tag">Jamf Pro</span>
+                        <span class="tech-tag">Hardware Support</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- King Kopy -->
+              <div class="career-block">
+                <div class="company-header">
+                  <div class="company-logo king-kopy">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <!-- Printer icon -->
+                      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                    </svg>
+                  </div>
+                  <div class="company-info">
+                    <h3>King Kopy</h3>
+                    <span class="tenure">1.5 years · Simi Valley, CA</span>
+                  </div>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <div class="role-header">
+                        <div class="role-title">
+                          <strong>Assistant Manager</strong>
+                        </div>
+                        <span class="date-badge">May 2015 - Oct 2016</span>
+                      </div>
+                      <p class="role-summary">Operations and technical support for local print shop.</p>
+                      <ul>
+                        <li>Managed daily print operations and customer design projects</li>
+                        <li>Built network infrastructure during store remodel: Cat5e, switches, APs</li>
+                      </ul>
+                      <div class="tech-tags">
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Operations</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="resume-section">
+              <h2>Skills</h2>
+              <div class="card skills-card">
+                <span class="skill-chip">Jamf Pro</span>
+                <span class="skill-chip">Microsoft Intune</span>
+                <span class="skill-chip">Active Directory</span>
+                <span class="skill-chip">macOS</span>
+                <span class="skill-chip">iOS/iPadOS</span>
+                <span class="skill-chip">Windows</span>
+                <span class="skill-chip">SCCM</span>
+                <span class="skill-chip">Zendesk</span>
+                <span class="skill-chip">OBS</span>
+                <span class="skill-chip">Microsoft Teams</span>
+                <span class="skill-chip">ProPresenter</span>
+                <span class="skill-chip">Device Lifecycle Management</span>
+                <span class="skill-chip">Patch Management</span>
+                <span class="skill-chip">Networking</span>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <!-- Dock -->
+    <div class="dock">
+      <div class="dock-container">
+        <div class="dock-item" title="Finder">
+          <div class="dock-icon finder">
+            <div class="finder-face">
+              <div class="finder-eye left"></div>
+              <div class="finder-eye right"></div>
+              <div class="finder-mouth"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dock-item" title="Safari">
+          <div class="dock-icon safari">
+            <div class="safari-compass">
+              <div class="safari-needle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dock-item" title="Messages">
+          <div class="dock-icon messages">
+            <div class="messages-bubble"></div>
+          </div>
+        </div>
+        <div class="dock-item" title="Mail" onclick="window.open('mailto:email@example.com')">
+          <div class="dock-icon mail">
+            <div class="mail-envelope"></div>
+          </div>
+        </div>
+        <div class="dock-item" title="Photos">
+          <div class="dock-icon photos">
+            <div class="photos-flower"></div>
+          </div>
+        </div>
+        <div class="dock-item" title="Music">
+          <div class="dock-icon music">
+            <div class="music-note">♪</div>
+          </div>
+        </div>
+        <div class="dock-divider"></div>
+        <div class="dock-item" title="Downloads">
+          <div class="dock-icon downloads">
+            <div class="downloads-arrow"></div>
+          </div>
+        </div>
+        <div class="dock-item" title="Trash">
+          <div class="dock-icon trash">
+            <div class="trash-can"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

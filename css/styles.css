@@ -407,6 +407,66 @@ body {
   margin-bottom: 10px;
 }
 
+/* Certifications */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  transition: all 0.2s ease;
+}
+
+.cert-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.cert-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cert-icon.jamf {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+}
+
+.cert-icon.comptia {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.cert-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cert-info span {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
 /* Footer */
 .footer {
   text-align: center;

@@ -434,26 +434,17 @@ body {
 .cert-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .cert-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.cert-icon.jamf {
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-  color: white;
-}
-
-.cert-icon.comptia {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: white;
+  width: 48px;
+  height: 48px;
 }
 
 .cert-info h4 {

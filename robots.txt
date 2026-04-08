@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coltonfouch.com/sitemap.xml

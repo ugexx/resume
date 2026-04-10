@@ -4,17 +4,17 @@ showMetadata = false
 +++
 
 ## Colton Fouch
-**Digital Workplace Engineer** · Ventura, CA · [info@coltonfouch.com](mailto:info@coltonfouch.com) · [LinkedIn](https://linkedin.com/in/coltonfouch) · [GitHub](https://github.com/ugexx)
+**Platform Manager** · Ventura, CA · [info@coltonfouch.com](mailto:info@coltonfouch.com) · [LinkedIn](https://linkedin.com/in/coltonfouch)
 
-Digital Workplace Engineer with 7+ years of experience driving endpoint strategy and enterprise device management. Expert in architecting and scaling MDM solutions across Jamf Pro, Microsoft Intune, and SCCM to support hybrid workforces on macOS, iOS, and Windows platforms. Proven track record of reducing provisioning time through zero-touch deployment automation, maintaining security compliance, and delivering reliable live production infrastructure for executive communications.
+Platform Manager with 7+ years of experience driving endpoint strategy and enterprise device management. Expert in architecting and scaling MDM solutions across Jamf Pro, Microsoft Intune, and SCCM to support hybrid workforces on macOS, iOS, and Windows platforms. Proven track record of reducing provisioning time through tech-driven deployment automation, maintaining security compliance, and delivering reliable live production infrastructure for executive communications.
 
 ---
 
 ## Experience
 
-### Patagonia — Ventura, CA *(7+ years · 3 Promotions)*
+### Patagonia — Ventura, CA *(7+ years)*
 
-**Digital Workplace Engineer** · *Oct 2023 – Present*
+**Platform Manager** · *Oct 2023 – Present*
 
 Own enterprise endpoint strategy and live production infrastructure supporting a global hybrid workforce.
 
@@ -69,11 +69,11 @@ Delivered technical support for corporate headquarters and 280+ retail locations
 
 ## Projects
 
-**Zero-Touch Mac Deployment Pipeline**
+**Tech-Driven Deployments with Jamf Setup Manager**
 
-Designed and implemented a fully automated zero-touch deployment workflow for macOS using Jamf Pro and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes, enabling remote onboarding at scale for a global workforce.
+Designed and implemented a fully automated, tech-driven deployment workflow for macOS using Jamf Pro, Jamf Setup Manager, and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes, enabling remote onboarding at scale for a global workforce.
 
-*Jamf Pro · Apple Business Manager · Bash · macOS*
+*Jamf Pro · Jamf Setup Manager · Apple Business Manager · macOS*
 
 ---
 
@@ -106,5 +106,5 @@ Built a cross-platform patch management strategy spanning macOS, iOS, and Window
 
 ## Certifications
 
-- **Jamf Certified Tech** — Jamf *(Active)*
-- **CompTIA Network+** — CompTIA *(Active)*
+- **Jamf Certified Tech** — Jamf
+- **CompTIA Network+** — CompTIA

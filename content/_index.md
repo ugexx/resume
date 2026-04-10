@@ -1,7 +1,7 @@
 +++
 +++
 
-Hi, I'm **Colton Fouch** — a Digital Workplace Engineer based in Ventura, CA.
+Hi, I'm **Colton Fouch** — a Platform Manager based in Ventura, CA.
 
 I architect and scale device management solutions at **Patagonia**, where I've spent 7+ years building the infrastructure that keeps a global workforce running — from zero-touch Mac deployments to broadcast-grade live streaming for company-wide events.
 

@@ -1,0 +1,61 @@
+baseURL = 'https://coltonfouch.com/'
+locale = 'en-us'
+title = 'Colton Fouch'
+theme = "nightfall"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.header]]
+    name = "~/about"
+    weight = 0
+    url = "/about"
+  [[menu.header]]
+    name = "~/resume"
+    weight = 1
+    url = "/resume"
+  [[menu.header]]
+    name = "~/blog"
+    weight = 2
+    url = "/blog"
+
+[params]
+user = "colton"
+hostname = "coltonfouch.com"
+sitedescription = "Digital Workplace Engineer — MDM architect, endpoint strategist, and live production engineer based in Ventura, CA."
+openLinksInNewTab = true
+showMetadata = false
+footerHtml = '© 2025 Colton Fouch · <a href="mailto:info@coltonfouch.com" class="footerLink">info@coltonfouch.com</a>'
+
+  [params.styles]
+  color = "orange"
+
+  [params.author]
+    name = "Colton Fouch"
+    email = "info@coltonfouch.com"
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/ugexx"
+icon = "fa-brands fa-github"
+target = "_blank"
+aria = "GitHub Profile"
+
+[[params.social]]
+key = 1
+name = "linkedin"
+url = "https://linkedin.com/in/coltonfouch"
+icon = "fa-brands fa-linkedin"
+target = "_blank"
+aria = "LinkedIn Profile"
+
+[[params.social]]
+key = 2
+name = "email"
+url = "mailto:info@coltonfouch.com"
+icon = "fa-solid fa-envelope"
+aria = "Email"

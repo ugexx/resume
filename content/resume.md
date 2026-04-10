@@ -28,13 +28,12 @@ Own enterprise endpoint strategy and live production infrastructure supporting a
 - Implement macOS Platform SSO with Secure Enclave to modernize identity authentication, eliminating legacy password dependency and aligning with zero-trust security principles
 - Design and enforce least-privilege admin access model via Jamf Connect and temporary admin workflows, reducing attack surface across managed endpoints
 - Build and maintain Apple Content Caching infrastructure across Ventura and Brooks locations, reducing bandwidth consumption and accelerating software delivery
-- Develop AI-powered IT helpdesk agent using Microsoft Copilot Studio, integrating with Jamf Pro and Zendesk to automate Tier 1 support workflows and reduce ticket volume
-- Drive cross-platform patch management strategy and endpoint compliance across macOS, iOS, and Windows, maintaining organizational security posture across all managed platforms
+- Drive macOS and iOS patch management strategy and endpoint compliance using Jamf Pro, maintaining security posture across all Apple-managed platforms
 - Integrate Palo Alto SSL inspection into endpoint security posture, ensuring encrypted traffic visibility and policy enforcement
 - Act as Tier 3 escalation engineer for cross-functional macOS, Windows, and infrastructure incidents, owning resolution from diagnosis through root cause documentation
 - Architect and operate broadcast-grade live streaming infrastructure for company-wide town halls and executive communications, integrating OBS, ProPresenter, and Microsoft Teams for seamless hybrid events reaching thousands of employees globally
 
-`Jamf Pro · Jamf Connect · Jamf Setup Manager · Intune · Azure · Copilot Studio · Active Directory · OBS · ProPresenter · Palo Alto · PowerShell · Bash`
+`Jamf Pro · Jamf Connect · Jamf Setup Manager · Intune · Active Directory · OBS · ProPresenter · Palo Alto · PowerShell · Bash`
 
 ---
 
@@ -87,20 +86,6 @@ Designed and implemented a fully automated, zero-touch deployment workflow for m
 
 ---
 
-**Jamf Pro to Azure Cloud Migration**
-Architected and executed the migration of on-premises Jamf Pro infrastructure to Microsoft Azure, improving scalability, availability, and disaster recovery posture for enterprise device management supporting 2,000+ endpoints.
-
-`Jamf Pro · Azure · Cloud Infrastructure · DNS/DHCP`
-
----
-
-**AI-Powered IT Helpdesk Agent**
-Built an AI-powered helpdesk automation agent using Microsoft Copilot Studio, integrating natively with Jamf Pro and Zendesk. Designed to handle Tier 1 support queries, automate device lookups, and reduce repetitive ticket volume — freeing IT staff for higher-complexity work.
-
-`Microsoft Copilot Studio · Jamf Pro · Zendesk · Microsoft 365 · Automation`
-
----
-
 **Platform SSO & Identity Modernization**
 Implemented macOS Platform SSO with Secure Enclave authentication and deployed Jamf Connect to enforce least-privilege admin access across managed endpoints. Eliminated legacy password-based authentication and aligned identity posture with zero-trust security principles.
 
@@ -123,9 +108,9 @@ Architected and operate a reliable broadcast-grade live streaming setup for comp
 ---
 
 **Endpoint Compliance & Patch Automation**
-Built a cross-platform patch management strategy spanning macOS, iOS, and Windows using Jamf Pro and Microsoft Intune. Automated compliance reporting and remediation workflows to maintain organizational security posture across 2,000+ managed endpoints.
+Built a macOS and iOS patch management strategy using Jamf Pro, automating compliance reporting and remediation workflows to maintain security posture across Apple-managed endpoints.
 
-`Jamf Pro · Intune · SCCM · PowerShell · Bash`
+`Jamf Pro · macOS · iOS/iPadOS`
 
 ---
 

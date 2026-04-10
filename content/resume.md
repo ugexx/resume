@@ -27,7 +27,7 @@ Own enterprise endpoint strategy and live production infrastructure supporting a
 - Architect and execute Jamf Pro migration to Azure cloud infrastructure, modernizing backend scalability and availability for enterprise device management
 - Implement macOS Platform SSO with Secure Enclave to modernize identity authentication, eliminating legacy password dependency and aligning with zero-trust security principles
 - Design and enforce least-privilege admin access model via Jamf Connect and temporary admin workflows, reducing attack surface across managed endpoints
-- Build and maintain Apple Content Caching infrastructure across Ventura campuses, reducing bandwidth consumption and accelerating software delivery
+- Build and maintain Apple Content Caching infrastructure, reducing bandwidth consumption and accelerating software delivery
 - Drive macOS and iOS patch management strategy and endpoint compliance using Jamf Pro, maintaining security posture across all Apple-managed platforms
 - Integrate Palo Alto SSL inspection into endpoint security posture, ensuring encrypted traffic visibility and policy enforcement
 - Act as Tier 3 escalation engineer for cross-functional macOS, Windows, and infrastructure incidents, owning resolution from diagnosis through root cause documentation
@@ -94,7 +94,7 @@ Implemented macOS Platform SSO with Secure Enclave authentication and deployed J
 ---
 
 **Apple Content Caching Infrastructure**
-Deployed and maintained Apple Content Caching servers across Ventura campuses, reducing WAN bandwidth consumption and accelerating software and update delivery for macOS and iOS devices company-wide.
+Deployed and maintained Apple Content Caching servers, reducing WAN bandwidth consumption and accelerating software and update delivery for macOS and iOS devices company-wide.
 
 `Apple Content Caching · macOS · Networking · DNS/DHCP`
 

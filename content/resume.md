@@ -71,7 +71,7 @@ Delivered technical support for corporate headquarters and 280+ retail locations
 
 **Tech-Driven Deployments with Jamf Setup Manager**
 
-Designed and implemented a fully automated, tech-driven deployment workflow for macOS using Jamf Pro, Jamf Setup Manager, and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes, enabling remote onboarding at scale for a global workforce.
+Designed and implemented a fully automated, tech-driven deployment workflow for macOS using Jamf Pro, Jamf Setup Manager, and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes.
 
 *Jamf Pro · Jamf Setup Manager · Apple Business Manager · macOS*
 

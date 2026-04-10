@@ -6,7 +6,11 @@ showMetadata = false
 ## Colton Fouch
 **Platform Manager** · Ventura, CA · [info@coltonfouch.com](mailto:info@coltonfouch.com) · [LinkedIn](https://linkedin.com/in/coltonfouch)
 
-Platform Manager with 7+ years of experience driving endpoint strategy and enterprise device management. Expert in architecting and scaling MDM solutions across Jamf Pro, Microsoft Intune, and SCCM to support hybrid workforces on macOS, iOS, and Windows platforms. Proven track record of reducing provisioning time through tech-driven deployment automation, maintaining security compliance, and delivering reliable live production infrastructure for executive communications.
+---
+
+## Summary
+
+Platform Manager with 7+ years of experience architecting enterprise endpoint strategy across Jamf Pro, Microsoft Intune, and SCCM for 2,000+ endpoints. Specializes in zero-touch macOS/iOS deployment, identity modernization (Platform SSO, Jamf Connect), cloud infrastructure migration, and AI-powered IT automation. Proven track record in security compliance, patch automation, and delivering broadcast-grade live production infrastructure for global executive communications.
 
 ---
 
@@ -19,12 +23,18 @@ Platform Manager with 7+ years of experience driving endpoint strategy and enter
 Own enterprise endpoint strategy and live production infrastructure supporting a global hybrid workforce.
 
 - Lead MDM architecture across Jamf Pro and Microsoft Intune, ensuring security compliance and seamless device provisioning for 2,000+ endpoints
-- Engineer zero-touch deployment workflows for macOS, iOS, and iPadOS, reducing device setup time and accelerating employee onboarding
-- Drive patch management strategy and endpoint compliance, maintaining organizational security posture across all managed platforms
-- Serve as tier 3 escalation point, resolving complex cross-functional technical issues and reducing mean time to resolution
-- Architect and operate live streaming infrastructure for company-wide town halls and executive communications
+- Engineer zero-touch deployment workflows for macOS, iOS, and iPadOS using Jamf Setup Manager and Apple Business Manager, reducing device provisioning time from hours to under 20 minutes and accelerating employee onboarding
+- Architect and execute Jamf Pro migration to Azure cloud infrastructure, modernizing backend scalability and availability for enterprise device management
+- Implement macOS Platform SSO with Secure Enclave to modernize identity authentication, eliminating legacy password dependency and aligning with zero-trust security principles
+- Design and enforce least-privilege admin access model via Jamf Connect and temporary admin workflows, reducing attack surface across managed endpoints
+- Build and maintain Apple Content Caching infrastructure across Ventura and Brooks locations, reducing bandwidth consumption and accelerating software delivery
+- Develop AI-powered IT helpdesk agent using Microsoft Copilot Studio, integrating with Jamf Pro and Zendesk to automate Tier 1 support workflows and reduce ticket volume
+- Drive cross-platform patch management strategy and endpoint compliance across macOS, iOS, and Windows, maintaining organizational security posture across all managed platforms
+- Integrate Palo Alto SSL inspection into endpoint security posture, ensuring encrypted traffic visibility and policy enforcement
+- Act as Tier 3 escalation engineer for cross-functional macOS, Windows, and infrastructure incidents, owning resolution from diagnosis through root cause documentation
+- Architect and operate broadcast-grade live streaming infrastructure for company-wide town halls and executive communications, integrating OBS, ProPresenter, and Microsoft Teams for seamless hybrid events reaching thousands of employees globally
 
-*Jamf Pro · Intune · Active Directory · OBS · ProPresenter*
+`Jamf Pro · Jamf Connect · Jamf Setup Manager · Intune · Azure · Copilot Studio · Active Directory · OBS · ProPresenter · Palo Alto · PowerShell · Bash`
 
 ---
 
@@ -32,11 +42,12 @@ Own enterprise endpoint strategy and live production infrastructure supporting a
 
 Promoted to expand device management scope and lead system administration initiatives across North America.
 
-- Managed hybrid Windows and macOS environment using SCCM, Intune, and Jamf Pro
-- Developed and maintained automated deployment scripts and configuration profiles
-- Collaborated with Security team on endpoint hardening and vulnerability remediation
+- Managed hybrid Windows and macOS environment spanning 2,000+ endpoints using SCCM, Intune, and Jamf Pro
+- Developed and maintained automated deployment scripts, configuration profiles, and patch workflows using PowerShell and Bash
+- Collaborated with Security team on endpoint hardening, vulnerability remediation, and least-privilege access initiatives
+- Led onboarding standardization efforts, improving provisioning consistency across North America offices
 
-*Jamf Pro · SCCM · Intune*
+`Jamf Pro · SCCM · Intune · PowerShell · Bash · Active Directory`
 
 ---
 
@@ -44,11 +55,11 @@ Promoted to expand device management scope and lead system administration initia
 
 Provided end-user support for headquarters and remote employees across North America.
 
-- Resolved technical issues across macOS and Windows platforms via Zendesk ticketing system
+- Resolved technical issues across macOS and Windows platforms via Zendesk ticketing system, maintaining high SLA adherence
 - Administered device enrollment and policy deployment through Jamf Pro and SCCM
-- Supported remote workforce during rapid pandemic-driven expansion of hybrid work model
+- Supported rapid pandemic-driven expansion of the hybrid work model, scaling remote endpoint management and access for a distributed workforce
 
-*Zendesk · Jamf Pro · SCCM*
+`Zendesk · Jamf Pro · SCCM`
 
 ---
 
@@ -63,33 +74,58 @@ Delivered technical support for corporate headquarters and 280+ retail locations
 - Managed Mac fleet using Jamf Pro, handling device enrollment, imaging, and software deployment
 - Participated in on-call rotation providing 24/7 critical support coverage
 
-*Active Directory · Jamf Pro · Hardware Support*
+`Active Directory · Jamf Pro · Hardware Support`
 
 ---
 
 ## Projects
 
 **Tech-Driven Deployments with Jamf Setup Manager**
+Designed and implemented a fully automated, zero-touch deployment workflow for macOS using Jamf Pro, Jamf Setup Manager, and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes, dramatically accelerating employee onboarding at scale.
 
-Designed and implemented a fully automated, tech-driven deployment workflow for macOS using Jamf Pro, Jamf Setup Manager, and Apple Business Manager. Reduced device provisioning time from hours to under 20 minutes.
+`Jamf Pro · Jamf Setup Manager · Apple Business Manager · macOS`
 
-*Jamf Pro · Jamf Setup Manager · Apple Business Manager · macOS*
+---
+
+**Jamf Pro to Azure Cloud Migration**
+Architected and executed the migration of on-premises Jamf Pro infrastructure to Microsoft Azure, improving scalability, availability, and disaster recovery posture for enterprise device management supporting 2,000+ endpoints.
+
+`Jamf Pro · Azure · Cloud Infrastructure · DNS/DHCP`
+
+---
+
+**AI-Powered IT Helpdesk Agent**
+Built an AI-powered helpdesk automation agent using Microsoft Copilot Studio, integrating natively with Jamf Pro and Zendesk. Designed to handle Tier 1 support queries, automate device lookups, and reduce repetitive ticket volume — freeing IT staff for higher-complexity work.
+
+`Microsoft Copilot Studio · Jamf Pro · Zendesk · Microsoft 365 · Automation`
+
+---
+
+**Platform SSO & Identity Modernization**
+Implemented macOS Platform SSO with Secure Enclave authentication and deployed Jamf Connect to enforce least-privilege admin access across managed endpoints. Eliminated legacy password-based authentication and aligned identity posture with zero-trust security principles.
+
+`Jamf Connect · Platform SSO · Secure Enclave · Azure AD/Entra ID · macOS`
+
+---
+
+**Apple Content Caching Infrastructure**
+Deployed and maintained Apple Content Caching servers across Ventura and Brooks office locations, reducing WAN bandwidth consumption and accelerating software and update delivery for macOS and iOS devices company-wide.
+
+`Apple Content Caching · macOS · Networking · DNS/DHCP`
 
 ---
 
 **Live Streaming Infrastructure for Town Halls**
-
 Architected and operate a reliable broadcast-grade live streaming setup for company-wide all-hands meetings and executive communications. Integrated OBS, ProPresenter, and Microsoft Teams to deliver seamless hybrid events for thousands of employees globally.
 
-*OBS · ProPresenter · Microsoft Teams · Networking*
+`OBS · ProPresenter · Microsoft Teams · Networking · A/V Hardware`
 
 ---
 
 **Endpoint Compliance & Patch Automation**
-
 Built a cross-platform patch management strategy spanning macOS, iOS, and Windows using Jamf Pro and Microsoft Intune. Automated compliance reporting and remediation workflows to maintain organizational security posture across 2,000+ managed endpoints.
 
-*Jamf Pro · Intune · SCCM · PowerShell*
+`Jamf Pro · Intune · SCCM · PowerShell · Bash`
 
 ---
 
@@ -97,14 +133,19 @@ Built a cross-platform patch management strategy spanning macOS, iOS, and Window
 
 | Category | Technologies |
 |---|---|
-| Device Management | Jamf Pro · Microsoft Intune · SCCM · Apple Business Manager |
-| Platforms | macOS · iOS/iPadOS · Windows |
-| Infrastructure | Active Directory · Azure AD/Entra ID · Networking · DNS/DHCP |
+| Device Management | Jamf Pro · Jamf Connect · Jamf Setup Manager · Microsoft Intune · SCCM · Apple Business Manager |
+| Platforms | macOS · iOS/iPadOS · Windows · Apple Silicon |
+| Infrastructure | Active Directory · Azure AD/Entra ID · Networking · DNS/DHCP · Palo Alto · SSL Inspection |
+| Cloud | Microsoft Azure · Jamf Cloud · Apple Business Manager |
+| Automation & AI | Microsoft Copilot Studio · PowerShell · Bash · Jamf Scripts · 1Password CLI |
 | Live Production | OBS Studio · ProPresenter · Microsoft Teams · A/V Hardware |
+| Security | Platform SSO · Secure Enclave · Endpoint Hardening · Patch Compliance · Least-Privilege Access |
 
 ---
 
 ## Certifications
 
 - **Jamf Certified Tech** — Jamf
+- **Jamf Certified Admin** — Jamf
+- **MD-102: Endpoint Administrator** — Microsoft
 - **CompTIA Network+** — CompTIA

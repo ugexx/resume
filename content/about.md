@@ -1,5 +1,6 @@
 +++
 title = "About"
+description = "About Colton Fouch — Platform Manager at Patagonia with 7+ years building endpoint strategy, cross-platform compliance automation, and live production infrastructure."
 showMetadata = false
 +++
 

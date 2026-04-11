@@ -1,7 +1,9 @@
 baseURL = 'https://coltonfouch.com/'
+languageCode = 'en-us'
 locale = 'en-us'
 title = 'Colton Fouch'
 theme = "nightfall"
+enableRobotsTXT = true
 
 [markup]
   [markup.goldmark]
@@ -28,7 +30,11 @@ hostname = "coltonfouch.com"
 sitedescription = "Platform Manager — MDM architect, endpoint strategist, and live production engineer based in Ventura, CA."
 openLinksInNewTab = true
 showMetadata = false
-footerHtml = '© 2025 Colton Fouch · <a href="mailto:info@coltonfouch.com" class="footerLink">info@coltonfouch.com</a>'
+footerHtml = '© 2026 Colton Fouch · <a href="mailto:info@coltonfouch.com" class="footerLink">info@coltonfouch.com</a>'
+
+  [params.og]
+    image = "/images/profile.png"
+    type = "website"
 
   [params.styles]
   color = "orange"

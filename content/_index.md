@@ -1,4 +1,5 @@
 +++
+description = "Colton Fouch — Platform Manager specializing in enterprise endpoint strategy, MDM architecture, and live production infrastructure. Based in Ventura, CA."
 +++
 
 Hi, I'm **Colton Fouch** — a Platform Manager based in Ventura, CA.

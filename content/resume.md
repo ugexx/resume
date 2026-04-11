@@ -1,5 +1,6 @@
 +++
 title = "Resume"
+description = "Resume of Colton Fouch — Platform Manager with 7+ years of experience in Jamf Pro, Microsoft Intune, zero-touch deployment, and enterprise endpoint strategy."
 showMetadata = false
 +++
 
@@ -22,16 +23,16 @@ Platform Manager with 7+ years of experience architecting enterprise endpoint st
 
 Own enterprise endpoint strategy and live production infrastructure supporting a global hybrid workforce.
 
-- Lead MDM architecture across Jamf Pro and Microsoft Intune, ensuring security compliance and seamless device provisioning for 2,000+ endpoints
-- Engineer zero-touch deployment workflows for macOS, iOS, and iPadOS using Jamf Setup Manager and Apple Business Manager, reducing device provisioning time from hours to under 20 minutes and accelerating employee onboarding
-- Architect and execute Jamf Pro migration to Azure cloud infrastructure, modernizing backend scalability and availability for enterprise device management
-- Implement macOS Platform SSO with Secure Enclave to modernize identity authentication, eliminating legacy password dependency and aligning with zero-trust security principles
-- Design and enforce least-privilege admin access model via Jamf Connect and temporary admin workflows, reducing attack surface across managed endpoints
-- Build and maintain Apple Content Caching infrastructure, reducing bandwidth consumption and accelerating software delivery
-- Drive macOS and iOS patch management strategy and endpoint compliance using Jamf Pro, maintaining security posture across all Apple-managed platforms
+- Lead MDM architecture across Jamf Pro and Microsoft Intune, maintaining security compliance and seamless provisioning for 2,000+ endpoints across macOS, iOS, and Windows
+- Engineer zero-touch deployment workflows using Jamf Setup Manager and Apple Business Manager — reduced device provisioning time from 4+ hours to under 20 minutes, accelerating onboarding for hundreds of new hires annually
+- Architect and execute Jamf Pro migration to Azure cloud infrastructure, improving backend uptime and scalability for enterprise device management
+- Implement macOS Platform SSO with Secure Enclave, eliminating legacy password dependency and aligning authentication with zero-trust security principles
+- Design and enforce least-privilege admin access model via Jamf Connect and temporary admin workflows, measurably reducing attack surface across managed endpoints
+- Build and maintain Apple Content Caching infrastructure across multiple office locations, reducing WAN bandwidth consumption for software delivery
+- Drive macOS and iOS patch management strategy and endpoint compliance using Jamf Pro, maintaining 95%+ compliance rates across all Apple-managed platforms
 - Integrate Palo Alto SSL inspection into endpoint security posture, ensuring encrypted traffic visibility and policy enforcement
 - Act as Tier 3 escalation engineer for cross-functional macOS, Windows, and infrastructure incidents, owning resolution from diagnosis through root cause documentation
-- Architect and operate broadcast-grade live streaming infrastructure for company-wide town halls and executive communications, integrating OBS, ProPresenter, and Microsoft Teams for seamless hybrid events reaching thousands of employees globally
+- Architect and operate broadcast-grade live streaming infrastructure for company-wide town halls and executive communications, integrating OBS, ProPresenter, and Microsoft Teams for hybrid events reaching 3,000+ employees globally
 
 `Jamf Pro · Jamf Connect · Jamf Setup Manager · Intune · Active Directory · OBS · ProPresenter · Palo Alto · PowerShell · Bash`
 
@@ -125,6 +126,7 @@ Built a macOS and iOS patch management strategy using Jamf Pro, automating compl
 | Automation & AI | Microsoft Copilot Studio · PowerShell · Bash · Jamf Scripts · 1Password CLI |
 | Live Production | OBS Studio · ProPresenter · Microsoft Teams · A/V Hardware |
 | Security | Platform SSO · Secure Enclave · Endpoint Hardening · Patch Compliance · Least-Privilege Access |
+| Monitoring | Compliance Reporting · Patch Audit · Jamf Smart Groups · Endpoint Telemetry |
 
 ---
 

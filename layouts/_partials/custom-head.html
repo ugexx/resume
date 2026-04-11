@@ -1,9 +1,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck4w1K5lNSxvwOwmpFbVVKEhv2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+{{ $description := .Params.description | default .Site.Params.sitedescription }}
+<meta property="og:title" content="{{ .Title }} — {{ .Site.Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="{{ with .Site.Params.og.type }}{{ . }}{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Site.Params.og.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title }} — {{ .Site.Title }}">
+<meta name="twitter:description" content="{{ $description }}">
 <style>
   .content table td, .content table th {
     padding: 0.5rem 1.5rem;
   }
   .content table td:first-child, .content table th:first-child {
     padding-left: 0;
+  }
+
+  @media print {
+    header, footer, nav, .sidebar {
+      display: none !important;
+    }
+    body {
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #000;
+      background: #fff;
+    }
+    .content {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+    h2 {
+      page-break-after: avoid;
+    }
+    .content table td, .content table th {
+      padding: 0.3rem 1rem;
+    }
   }
 </style>

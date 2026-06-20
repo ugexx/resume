@@ -1,0 +1,44 @@
+<section class="min-h-screen flex items-center justify-center pt-20" id="hero">
+  <div class="max-w-[1100px] mx-auto px-8 max-md:px-5 w-full">
+    <div class="grid grid-cols-[280px_1fr] gap-16 items-center max-md:grid-cols-1 max-md:gap-8 max-md:text-center">
+      <!-- Photo -->
+      <div class="anim w-[280px] h-[280px] rounded-full overflow-hidden border-2 border-[var(--color-border)] relative mx-auto max-md:w-[200px] max-md:h-[200px]"
+           style="box-shadow: 0 0 60px var(--color-accent-dim);">
+        <img src="/assets/profile.png" alt="Colton Fouch" class="w-full h-full object-cover" />
+        <div class="absolute inset-[-3px] rounded-full border border-[var(--color-accent)] opacity-30 animate-[pulse-ring_3s_ease-in-out_infinite]"></div>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h1 class="font-mono font-bold text-[clamp(36px,5vw,56px)] leading-[1.1] mb-4 anim anim-delay-1">
+          Colton<br /><span class="text-[var(--color-accent)]">Fouch</span>
+        </h1>
+        <p class="font-mono text-[15px] text-[var(--color-text-dim)] mb-6 tracking-[0.03em] anim anim-delay-2">
+          Platform Engineering Leader @ Patagonia
+        </p>
+        <p class="text-[17px] text-[var(--color-text-dim)] max-w-[540px] leading-[1.7] mb-8 anim anim-delay-3 max-md:mx-auto">
+          I architect and scale device management solutions that keep a global workforce running.
+        </p>
+        <div class="flex gap-3 flex-wrap anim anim-delay-4 max-md:justify-center">
+          <a href="#experience" class="font-mono text-[13px] py-[10px] px-5 bg-[var(--color-accent)] text-[var(--color-bg)] border border-[var(--color-accent)] rounded-md tracking-[0.04em] transition-opacity duration-200 hover:opacity-85 no-underline">
+            View Resume
+          </a>
+          <a href="#connect" class="font-mono text-[13px] py-[10px] px-5 border border-[var(--color-border)] rounded-md text-[var(--color-text-dim)] tracking-[0.04em] transition-all duration-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] no-underline">
+            Get in Touch
+          </a>
+        </div>
+        <div class="flex gap-6 mt-6 anim anim-delay-4 max-md:justify-center">
+          <a href="https://linkedin.com/in/coltonfouch" target="_blank" rel="noopener" class="font-mono text-[12px] text-[var(--color-text-dim)] hover:text-[var(--color-accent)] transition-colors duration-200 no-underline">LinkedIn</a>
+          <a href="mailto:info@coltonfouch.com" class="font-mono text-[12px] text-[var(--color-text-dim)] hover:text-[var(--color-accent)] transition-colors duration-200 no-underline">info@coltonfouch.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.1; }
+  }
+</style>

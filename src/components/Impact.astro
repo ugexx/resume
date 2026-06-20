@@ -1,0 +1,66 @@
+<section class="py-[120px] max-md:py-20" id="impact">
+  <div class="max-w-[1100px] mx-auto px-8 max-md:px-5">
+    <div class="section-label anim">// impact</div>
+    <h2 class="font-mono font-bold text-[clamp(28px,3.5vw,40px)] mb-12 leading-[1.2] anim anim-delay-1">By the Numbers</h2>
+
+    <div class="grid grid-cols-5 gap-6 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+      <div class="anim bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 text-center transition-all duration-300 hover:border-[var(--color-accent)]">
+        <div class="font-mono font-bold text-[clamp(32px,4vw,48px)] text-[var(--color-accent)] mb-2 stat-number" data-target="2000" data-suffix="+">0+</div>
+        <div class="font-mono text-[12px] text-[var(--color-text-dim)] uppercase tracking-[0.1em]">endpoints managed</div>
+      </div>
+
+      <div class="anim anim-delay-1 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 text-center transition-all duration-300 hover:border-[var(--color-accent)]">
+        <div class="font-mono font-bold text-[clamp(32px,4vw,48px)] text-[var(--color-accent)] mb-2 stat-number" data-target="3" data-suffix="">0</div>
+        <div class="font-mono text-[12px] text-[var(--color-text-dim)] uppercase tracking-[0.1em]">platforms<br/>macOS · Windows · iOS</div>
+      </div>
+
+      <div class="anim anim-delay-2 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 text-center transition-all duration-300 hover:border-[var(--color-accent)]">
+        <div class="font-mono font-bold text-[clamp(32px,4vw,48px)] text-[var(--color-accent)] mb-2">
+          <span class="stat-number" data-target="20" data-suffix="">0</span><span class="text-[24px]"> min</span>
+        </div>
+        <div class="font-mono text-[12px] text-[var(--color-text-dim)] uppercase tracking-[0.1em]">zero-touch provisioning<br/><span class="normal-case tracking-normal text-[10px]">down from hours</span></div>
+      </div>
+
+      <div class="anim anim-delay-3 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 text-center transition-all duration-300 hover:border-[var(--color-accent)]">
+        <div class="font-mono font-bold text-[clamp(32px,4vw,48px)] text-[var(--color-accent)] mb-2 stat-number" data-target="7" data-suffix="+">0+</div>
+        <div class="font-mono text-[12px] text-[var(--color-text-dim)] uppercase tracking-[0.1em]">years at Patagonia</div>
+      </div>
+
+      <div class="anim anim-delay-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 text-center transition-all duration-300 hover:border-[var(--color-accent)]">
+        <div class="font-mono font-bold text-[clamp(28px,3.5vw,36px)] text-[var(--color-accent)] mb-2 leading-[1.1]">Global</div>
+        <div class="font-mono text-[12px] text-[var(--color-text-dim)] uppercase tracking-[0.1em]">workforce support<br/><span class="normal-case tracking-normal text-[10px]">multi-region · hybrid</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animate stats on scroll
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1500;
+        const start = performance.now();
+
+        function update(now: number) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          const current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+
+        requestAnimationFrame(update);
+        statsObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(el => statsObserver.observe(el));
+</script>

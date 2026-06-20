@@ -1,0 +1,135 @@
+<section class="py-[120px] max-md:py-20" id="architecture">
+  <div class="max-w-[1100px] mx-auto px-8 max-md:px-5">
+    <div class="section-label anim">// architecture</div>
+    <h2 class="font-mono font-bold text-[clamp(28px,3.5vw,40px)] mb-4 leading-[1.2] anim anim-delay-1">Case Studies</h2>
+    <p class="text-[var(--color-text-dim)] text-[16px] max-w-[640px] mb-16 leading-[1.7] anim anim-delay-1">
+      Deep dives into strategic architecture decisions that define how Patagonia's global workforce stays connected, secure, and productive.
+    </p>
+
+    <!-- Case Study 1: Zero-Touch -->
+    <div class="anim mb-20">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+        <!-- Header -->
+        <div class="border-b border-[var(--color-border)] px-8 py-6 flex items-center gap-3">
+          <span class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.2em]">Case Study 01</span>
+          <span class="text-[var(--color-border)]">|</span>
+          <h3 class="font-mono font-bold text-[20px]">Zero-Touch Deployments at Scale</h3>
+        </div>
+
+        <div class="p-8 grid grid-cols-[1fr_1fr] gap-8 max-md:grid-cols-1">
+          <!-- Left: Architecture diagram (ASCII) -->
+          <div class="bg-[var(--color-bg)] rounded-lg p-6 border border-[var(--color-border)] font-mono text-[11px] text-[var(--color-text-dim)] leading-[1.8] overflow-x-auto">
+            <div class="text-[var(--color-accent)] mb-3">┌─── Architecture Flow ───┐</div>
+            <div class="text-[var(--color-text)]">Apple Business Manager</div>
+            <div class="ml-2">│  Automated Device Enrollment</div>
+            <div class="ml-2">│  MDM server assignment</div>
+            <div class="ml-2 text-[var(--color-accent)]">▼</div>
+            <div class="text-[var(--color-text)]">Jamf Pro Cloud</div>
+            <div class="ml-2">│  PreStage Enrollment</div>
+            <div class="ml-2">│  Configuration Profiles</div>
+            <div class="ml-2">│  Policy triggers</div>
+            <div class="ml-2 text-[var(--color-accent)]">▼</div>
+            <div class="text-[var(--color-text)]">Jamf Setup Manager</div>
+            <div class="ml-2">│  Branded enrollment flow</div>
+            <div class="ml-2">│  User-initiated customization</div>
+            <div class="ml-2 text-[var(--color-accent)]">▼</div>
+            <div class="text-[var(--color-text)]">Endpoint Ready</div>
+            <div class="ml-2">│  Platform SSO (Secure Enclave)</div>
+            <div class="ml-2">│  Jamf Connect (least-privilege)</div>
+            <div class="ml-2">╰─ ⏱ &lt; 20 minutes from unbox</div>
+          </div>
+
+          <!-- Right: Decision points -->
+          <div class="space-y-6">
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Problem</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Manual Mac provisioning consumed hours of IT time per device. Inconsistent configurations led to support drift. A global hybrid workforce needed a repeatable, hands-off deployment pipeline.
+              </p>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Approach</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Designed a fully automated macOS deployment workflow leveraging Jamf Setup Manager atop Apple Business Manager's Automated Device Enrollment. Combined PreStage enrollments, configuration profiles, and policy-driven software installs into a single linear flow.
+              </p>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Outcome</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Reduced provisioning from hours to under 20 minutes. Eliminated configuration drift across 2,000+ endpoints. Enabled true zero-touch deployment for remote employees worldwide.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Jamf Pro</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">ABM</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Platform SSO</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">macOS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 2: Co-Management -->
+    <div class="anim">
+      <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+        <!-- Header -->
+        <div class="border-b border-[var(--color-border)] px-8 py-6 flex items-center gap-3">
+          <span class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.2em]">Case Study 02</span>
+          <span class="text-[var(--color-border)]">|</span>
+          <h3 class="font-mono font-bold text-[20px]">Co-Management: Jamf Pro + Intune</h3>
+        </div>
+
+        <div class="p-8 grid grid-cols-[1fr_1fr] gap-8 max-md:grid-cols-1">
+          <!-- Left: Architecture diagram -->
+          <div class="bg-[var(--color-bg)] rounded-lg p-6 border border-[var(--color-border)] font-mono text-[11px] text-[var(--color-text-dim)] leading-[1.8] overflow-x-auto">
+            <div class="text-[var(--color-accent)] mb-3">┌─── Co-Management Model ───┐</div>
+            <div class="text-[var(--color-text)]">Jamf Pro (Primary MDM)</div>
+            <div class="ml-2">├─ macOS configuration &amp; compliance</div>
+            <div class="ml-2">├─ App deployment &amp; patch mgmt</div>
+            <div class="ml-2">├─ Platform SSO (Secure Enclave)</div>
+            <div class="ml-2">╰─ Zero-touch provisioning</div>
+            <div class="my-2"></div>
+            <div class="text-[var(--color-text)]">Intune (Compliance Bridge)</div>
+            <div class="ml-2">├─ Conditional Access policies</div>
+            <div class="ml-2">├─ Entra ID device join reporting</div>
+            <div class="ml-2">╰─ Windows endpoint management</div>
+            <div class="my-2"></div>
+            <div class="text-[var(--color-accent)]">Key Decision:</div>
+            <div class="ml-2">Co-management over full migration</div>
+            <div class="ml-2">→ preserves Jamf strengths</div>
+            <div class="ml-2">→ satisfies Entra ID compliance</div>
+          </div>
+
+          <!-- Right: Decision points -->
+          <div class="space-y-6">
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Problem</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Balancing two MDM platforms across 2,000+ devices without doubling administrative overhead. Microsoft's Entra ID required device compliance data for Conditional Access — but full migration to Intune would sacrifice Jamf's mature macOS management capabilities.
+              </p>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Approach</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Designed a co-management strategy where Jamf Pro remains the primary MDM for macOS, handling configuration, app deployment, and patch management, while Intune serves as the compliance bridge to Entra ID. Platform SSO with Secure Enclave provides seamless, passwordless authentication across both platforms.
+              </p>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] text-[var(--color-accent)] uppercase tracking-[0.15em] mb-2">Outcome</div>
+              <p class="text-[var(--color-text-dim)] text-[14px] leading-[1.7]">
+                Achieved Entra ID Conditional Access compliance without sacrificing macOS management quality. Eliminated legacy password-based authentication. Maintained single-pane visibility for macOS while satisfying enterprise identity requirements.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Jamf Pro</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Intune</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Entra ID</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] px-[10px] py-[4px] border border-[var(--color-border)] rounded text-[var(--color-text-dim)] uppercase">Secure Enclave</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

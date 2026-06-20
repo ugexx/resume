@@ -1,0 +1,78 @@
+---
+interface ADR {
+  title: string;
+  context: string;
+  decision: string;
+  alternatives: string[];
+  consequences: string;
+}
+
+const adrs: ADR[] = [
+  {
+    title: "Jamf Pro + Intune Hybrid Over Intune-Only for macOS Management",
+    context: "When Microsoft began expanding Intune's macOS capabilities, we faced a decision: consolidate all endpoint management under Intune (reducing vendor count) or maintain a best-of-breed hybrid with Jamf Pro for macOS and Intune for Windows. The fleet included 1,500+ Macs and 500+ Windows devices, with deep investment in Jamf Pro automation and zero-touch workflows.",
+    decision: "Maintained Jamf Pro as the primary macOS MDM with Intune for Windows, integrated through Entra ID for unified identity. Kept platform-specific tooling where it provided measurable advantage rather than forcing consolidation at the expense of capability.",
+    alternatives: [
+      "Intune-only: Would have required rebuilding zero-touch workflows from scratch with fewer macOS-specific controls. Estimated 6-12 month migration with degraded macOS management during transition.",
+      "Jamf-only with Intune connector: Lighter touch but would have left Windows devices without mature management, creating a gap for the 25% of fleet on Windows.",
+      "Third-party unified MDM (Workspace ONE, Kandji): Evaluated but would have required migrating both platforms simultaneously — high risk, uncertain ROI.",
+    ],
+    consequences: "Mac management remains best-in-class with Jamf Pro's Apple-specific feature set (Setup Manager, Patch Management, Platform SSO integration). Windows devices managed through Intune with co-management where needed. Entra ID provides unified identity across both platforms. Ongoing cost of two MDM platforms is offset by reduced IT labor and faster incident resolution on macOS — our primary platform.",
+  },
+  {
+    title: "Platform SSO with Secure Enclave Over Traditional Password-Based Authentication",
+    context: "Patagonia's macOS fleet relied on traditional password-based authentication synced through Jamf Connect. Password resets were a top IT ticket driver, and shared credentials created security risks. When Apple introduced Platform SSO with Secure Enclave support in macOS Ventura, we saw an opportunity to eliminate passwords entirely for device login.",
+    decision: "Adopted Platform SSO with Secure Enclave-backed authentication via Jamf Connect + Entra ID, phased across the fleet. Users authenticate once with biometrics (Touch ID) or local account, and the Secure Enclave handles token exchange with Entra ID — no passwords stored or transmitted.",
+    alternatives: [
+      "Status quo (Jamf Connect password sync): Functional but perpetuated password-based vulnerabilities and IT ticket volume.",
+      "Conditional Access + MFA only: Added friction without eliminating the underlying password problem.",
+      "Full Entra ID Join: Not supported on macOS at the time and would have required Intune migration for Mac management.",
+    ],
+    consequences: "Password reset tickets dropped significantly. Zero credentials stored on-device outside the Secure Enclave. Users authenticate with Touch ID — faster and more secure. However, the initial rollout required careful change management; users accustomed to password login needed training on the new biometric flow. Platform SSO adoption also required macOS Ventura minimum, creating a short-term OS upgrade push.",
+  },
+];
+---
+
+<section id="architecture" class="py-[120px] max-md:py-20">
+  <div class="max-w-[1080px] mx-auto px-8 relative z-[1] max-md:px-5">
+    <div class="text-[12px] uppercase tracking-[0.2em] text-accent mb-2 anim font-semibold">Architecture Decisions</div>
+    <h2 class="text-[clamp(30px,4vw,42px)] font-bold mb-4 leading-[1.15] anim delay-1">Why We Built It This Way</h2>
+    <p class="text-text-dim text-[17px] mb-12 anim delay-2 max-w-[600px]">
+      Architecture Decision Records — the reasoning behind key infrastructure choices. A window into how I think about trade-offs at enterprise scale.
+    </p>
+
+    <div class="space-y-8">
+      {adrs.map((adr, i) => (
+        <div class={`anim bg-surface border border-border rounded-xl p-8 max-md:p-5 ${i > 0 ? 'delay-2' : 'delay-1'}`}>
+          <h3 class="text-[20px] font-bold mb-6 leading-[1.3] text-text">{adr.title}</h3>
+
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Context</h4>
+              <p class="text-[15px] text-text-dim leading-[1.7]">{adr.context}</p>
+            </div>
+
+            <div>
+              <h4 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h4>
+              <p class="text-[15px] text-text leading-[1.7]">{adr.decision}</p>
+            </div>
+
+            <div>
+              <h4 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Alternatives Considered</h4>
+              <ul class="space-y-2">
+                {adr.alternatives.map((alt) => (
+                  <li class="text-[15px] text-text-dim leading-[1.65] pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-accent">{alt}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Consequences</h4>
+              <p class="text-[15px] text-text-dim leading-[1.7]">{adr.consequences}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

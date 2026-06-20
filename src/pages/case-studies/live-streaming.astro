@@ -1,0 +1,65 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+const title = "Live Streaming Infrastructure";
+const description = "How I architected broadcast-grade live streaming for company-wide town halls, integrating OBS, ProPresenter, and Microsoft Teams for hybrid events reaching thousands of employees.";
+const metric = "Thousands";
+const metricLabel = "Employees reached";
+---
+
+<CaseStudyLayout title={title} description={description} metric={metric} metricLabel={metricLabel}>
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Problem</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Patagonia needed broadcast-quality live streaming for quarterly company-wide town halls. Existing solutions were ad-hoc — a single webcam pointed at a stage, poor audio, no production switching. With a global hybrid workforce, employees outside headquarters felt disconnected. Leadership wanted a professional production that would make remote employees feel present and engaged, not like an afterthought.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Built a multi-camera production workflow using OBS Studio for scene switching and compositing, ProPresenter for graphics and lower-thirds, and Microsoft Teams as the distribution platform (since the entire company already used Teams). This avoided proprietary hardware encoders and gave us software-defined flexibility — we could add cameras, switch sources, and overlay graphics without new hardware.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Implementation</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75] mb-4">
+        The production setup was designed for reliability and flexibility:
+      </p>
+      <ul class="space-y-3 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">Multi-camera capture:</strong> Three PTZ cameras connected via NDI to OBS — wide shot, close-up, and audience angle.</li>
+        <li><strong class="text-text">OBS Studio:</strong> Scene composition, transitions, and NDI-to-virtual-camera output. Custom scenes for speaker, slides, Q&A, and hybrid layouts.</li>
+        <li><strong class="text-text">ProPresenter:</strong> Lower-thirds, speaker name cards, brand graphics, and countdown timers. Output fed into OBS as a transparent overlay via NDI.</li>
+        <li><strong class="text-text">Microsoft Teams:</strong> OBS virtual camera selected as the Teams camera source. Teams Live Events used for large-scale distribution with moderated Q&A.</li>
+        <li><strong class="text-text">Audio chain:</strong> Professional microphones → audio interface → OBS with compression, noise gate, and EQ. Separate mix for in-room PA and stream.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Result</h2>
+      <ul class="space-y-2 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li>Delivered <strong class="text-text">broadcast-quality town halls</strong> reaching thousands of employees globally.</li>
+        <li>Remote employees reported feeling <strong class="text-text">significantly more connected</strong> to company leadership.</li>
+        <li>The production setup became the <strong class="text-text">standard for all company-wide events</strong> — not just town halls but product launches, all-hands, and fireside chats.</li>
+        <li><strong class="text-text">Zero production failures</strong> during live events thanks to redundant audio paths and backup streaming configurations.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Lessons Learned</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Live production is a different discipline from IT infrastructure — it requires real-time troubleshooting with no room for error. We learned to always run a full dress rehearsal 48 hours before each event. Redundancy is essential: we ran dual audio interfaces and had a backup streaming laptop configured identically. The biggest surprise: the production quality directly impacted employee engagement survey scores. Professional AV signals that leadership values the time and attention of every employee, regardless of location.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-2">
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">OBS Studio</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">ProPresenter</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Microsoft Teams</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">NDI</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">A/V Hardware</span>
+    </div>
+  </section>
+</CaseStudyLayout>

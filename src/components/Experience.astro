@@ -1,0 +1,71 @@
+---
+interface Role {
+  company: string;
+  role: string;
+  dates: string;
+  desc: string;
+  tags: string[];
+}
+
+const roles: Role[] = [
+  {
+    company: "Patagonia — Ventura, CA",
+    role: "Platform Manager",
+    dates: "Oct 2023 — Present",
+    desc: "Own enterprise endpoint strategy and live production infrastructure supporting a global hybrid workforce. Lead MDM architecture across Jamf Pro and Intune for 2,000+ endpoints. Engineer zero-touch deployment workflows reducing provisioning from hours to under 20 minutes.",
+    tags: ["Jamf Pro", "Intune", "OBS", "PowerShell", "Bash", "Palo Alto"],
+  },
+  {
+    company: "Patagonia — Ventura, CA",
+    role: "IT System Administrator II",
+    dates: "Oct 2022 — Oct 2023",
+    desc: "Managed hybrid Windows and macOS environment spanning 2,000+ endpoints. Developed automated deployment scripts, configuration profiles, and patch workflows.",
+    tags: ["Jamf Pro", "SCCM", "Intune", "PowerShell", "Bash"],
+  },
+  {
+    company: "Patagonia — Ventura, CA",
+    role: "IT Systems Analyst",
+    dates: "Sep 2018 — Oct 2022",
+    desc: "Provided end-user support for headquarters and remote employees across North America. Supported rapid pandemic-driven expansion of the hybrid work model.",
+    tags: ["Zendesk", "Jamf Pro", "SCCM"],
+  },
+  {
+    company: "Guitar Center — Westlake Village, CA",
+    role: "IT Helpdesk Technician",
+    dates: "Oct 2016 — Sep 2018",
+    desc: "Delivered technical support for corporate headquarters and 280+ retail locations nationwide. Managed Mac fleet using Jamf Pro.",
+    tags: ["Active Directory", "Jamf Pro", "Hardware"],
+  },
+];
+---
+
+<section id="experience" class="py-[120px] max-md:py-20">
+  <div class="max-w-[1080px] mx-auto px-8 relative z-[1] max-md:px-5">
+    <div class="text-[12px] uppercase tracking-[0.2em] text-accent mb-2 anim font-semibold">Experience</div>
+    <h2 class="text-[clamp(30px,4vw,42px)] font-bold mb-12 leading-[1.15] anim delay-1">Career Timeline</h2>
+
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-accent via-accent/40 to-border"></div>
+
+      {roles.map((role) => (
+        <div class="anim pl-9 mb-12 relative last:mb-0">
+          <!-- Timeline dot -->
+          <div class="absolute left-[-4.5px] top-2 w-[10px] h-[10px] rounded-full bg-accent ring-4 ring-bg"></div>
+
+          <div class="text-[13px] text-text-dim mb-1 font-medium">{role.company}</div>
+          <div class="text-[22px] font-bold mb-1">{role.role}</div>
+          <div class="text-[14px] text-accent mb-3 font-medium">{role.dates}</div>
+          <p class="text-text-dim text-[16px] leading-[1.7] max-w-[640px]">{role.desc}</p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {role.tags.map((tag) => (
+              <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

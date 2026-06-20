@@ -1,0 +1,62 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import CaseStudies from "../components/CaseStudies.astro";
+import ArchitectureDecisions from "../components/ArchitectureDecisions.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import CareerNarrative from "../components/CareerNarrative.astro";
+import Speaking from "../components/Speaking.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import ParticleCanvas from "../components/ParticleCanvas.astro";
+
+const title = "Colton Fouch — Platform Manager";
+const description =
+  "Platform Manager at Patagonia — MDM architect, endpoint strategist, and live production engineer based in Ventura, CA.";
+---
+
+<Base title={title} description={description}>
+  <ParticleCanvas />
+  <Nav />
+  <Hero />
+  <CaseStudies />
+  <ArchitectureDecisions />
+  <Experience />
+  <Skills />
+  <CareerNarrative />
+  <Speaking />
+  <Contact />
+  <Footer />
+
+  <script>
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a[href^='/#']");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((s) => {
+        if (window.scrollY >= (s as HTMLElement).offsetTop - 200) current = s.id;
+      });
+      navLinks.forEach((l) => {
+        const href = l.getAttribute("href") || "";
+        l.classList.toggle("text-accent", href === "/#" + current);
+      });
+    });
+  </script>
+</Base>

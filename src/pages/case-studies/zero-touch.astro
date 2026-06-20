@@ -1,0 +1,128 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+const title = "Zero-Touch Deployments";
+const description = "How I designed a fully automated macOS deployment workflow that eliminated manual imaging and reduced provisioning from hours to under 20 minutes across 2,000+ endpoints.";
+const metric = "hours → 20min";
+const metricLabel = "Provisioning time";
+---
+
+<CaseStudyLayout title={title} description={description} metric={metric} metricLabel={metricLabel}>
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Problem</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Manual device provisioning was taking IT staff 2–4 hours per Mac, creating a bottleneck for new hires and refresh cycles across 2,000+ endpoints. Every new device required hands-on configuration — imaging, local account creation, app installation, and policy application. During hiring surges, IT couldn't keep pace. New employees sometimes waited days for a ready-to-work device.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Chose Jamf Setup Manager + Apple Business Manager (ABM) over manual imaging because it enables true zero-touch deployment, scales infinitely, and eliminates IT hands-on time entirely. The key insight: ABM's Automated Device Enrollment (ADE) lets us pre-configure every Mac before it leaves the factory. Combined with Jamf Pro's policy engine, we could automate the entire provisioning pipeline — enrollment, configuration, app deployment, compliance checks, and identity binding.
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="bg-surface border border-border rounded-xl p-6 overflow-x-auto">
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-4">Architecture: Zero-Touch Deployment Flow</h2>
+      <svg viewBox="0 0 840 360" class="w-full max-w-[840px]" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowZT" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#BFA181" />
+          </marker>
+          <linearGradient id="boxGradZT" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2D2D2D" />
+            <stop offset="100%" stop-color="#252525" />
+          </linearGradient>
+        </defs>
+
+        <!-- Background -->
+        <rect width="840" height="360" rx="8" fill="#1C1C1C" />
+
+        <!-- Step 1: ABM -->
+        <rect x="20" y="30" width="160" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
+        <text x="100" y="65" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Apple Business</text>
+        <text x="100" y="85" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Manager</text>
+        <text x="100" y="115" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Device purchase →</text>
+        <text x="100" y="132" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">auto-enrolled in MDM</text>
+
+        <!-- Arrow 1→2 -->
+        <line x1="180" y1="100" x2="245" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+
+        <!-- Step 2: Jamf Pro Enrollment -->
+        <rect x="255" y="30" width="170" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
+        <text x="340" y="55" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Jamf Pro</text>
+        <text x="340" y="75" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Enrollment</text>
+        <text x="340" y="105" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Setup Manager →</text>
+        <text x="340" y="122" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Prestage enrollment →</text>
+        <text x="340" y="139" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Device assigned to user</text>
+
+        <!-- Arrow 2→3 -->
+        <line x1="425" y1="100" x2="490" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+
+        <!-- Step 3: Configuration Profiles -->
+        <rect x="500" y="30" width="180" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
+        <text x="590" y="55" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Configuration</text>
+        <text x="590" y="75" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Profiles</text>
+        <text x="590" y="105" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Wi-Fi · VPN · Certificates</text>
+        <text x="590" y="122" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Security policies →</text>
+        <text x="590" y="139" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">App deployments</text>
+
+        <!-- Arrow 3→4 -->
+        <line x1="680" y1="100" x2="745" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+
+        <!-- Step 4: User Login -->
+        <rect x="20" y="210" width="800" height="80" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
+        <text x="420" y="245" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">User Opens Mac → Entra ID Login → Platform SSO → Ready to Work</text>
+        <text x="420" y="270" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="12">Total time: &lt; 20 minutes · Zero IT touch · Secure Enclave-backed auth</text>
+
+        <!-- Time indicators -->
+        <text x="100" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 1 of 4</text>
+        <text x="340" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 2 of 4</text>
+        <text x="590" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 3 of 4</text>
+      </svg>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Implementation</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75] mb-4">
+        Built a complete zero-touch pipeline with five layers:
+      </p>
+      <ul class="space-y-3 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">ABM Integration:</strong> Every Mac purchased through business channels automatically appears in ABM and is assigned to the Jamf Pro MDM server. No manual enrollment required.</li>
+        <li><strong class="text-text">Prestage Enrollment:</strong> Custom enrollment profiles in Jamf Pro define user experience — skip setup screens, enforce FileVault, require Platform SSO authentication.</li>
+        <li><strong class="text-text">Setup Manager:</strong> Branded provisioning workflow that guides users through the final steps — region selection, account creation, and a "Welcome to Patagonia" screen.</li>
+        <li><strong class="text-text">Configuration Profiles:</strong> Wi-Fi, VPN, certificates, security policies, and compliance baselines apply automatically during enrollment. No post-setup configuration needed.</li>
+        <li><strong class="text-text">App Deployment:</strong> Required applications (Office 365, security tools, internal apps) install silently via Jamf policies triggered by enrollment completion.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Result</h2>
+      <ul class="space-y-2 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li>Provisioning dropped from <strong class="text-text">2–4 hours to under 20 minutes</strong> per device.</li>
+        <li>IT staff reclaimed approximately <strong class="text-text">15 hours/week</strong> previously spent on manual imaging.</li>
+        <li>New hires receive ready-to-work devices on <strong class="text-text">Day 1</strong> without IT intervention.</li>
+        <li>Deployment scaled to handle <strong class="text-text">50+ simultaneous provisions</strong> during hiring surges.</li>
+        <li><strong class="text-text">Zero-touch</strong> means IT never physically touches the device — it ships directly to the employee.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Lessons Learned</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        The biggest challenge wasn't technical — it was change management. Users accustomed to IT-handled setup needed clear documentation and communication. We created a one-page "Getting Started" guide that shipped with every device. The second lesson: network dependencies matter. Zero-touch fails if the device can't reach Jamf Cloud during setup. We added offline enrollment fallback and documented the exact network requirements for procurement to communicate to new hires before their start date.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-2">
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Jamf Pro</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Apple Business Manager</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">macOS</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Entra ID</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Bash</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Setup Manager</span>
+    </div>
+  </section>
+</CaseStudyLayout>

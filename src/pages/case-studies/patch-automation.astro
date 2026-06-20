@@ -1,0 +1,61 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+const title = "Patch Automation";
+const description = "How I built macOS and iOS patch management strategy using Jamf Pro, automating compliance reporting and remediation workflows to maintain security posture across the entire fleet.";
+const metric = "Automated";
+const metricLabel = "Compliance workflow";
+---
+
+<CaseStudyLayout title={title} description={description} metric={metric} metricLabel={metricLabel}>
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Problem</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Patch management across 2,000+ macOS and iOS devices was reactive and manual. IT relied on users to install updates, and compliance reporting required manual audit. Security patches had inconsistent adoption rates, with some devices going weeks without critical updates. During zero-day events, IT had no way to confirm fleet-wide patch status within hours.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Built an automated patch management pipeline in Jamf Pro with three layers: Patch Policies (automated deployment schedules), Smart Groups (dynamic device targeting based on patch status), and Compliance Reporting (automated dashboards for security leadership). Chose Jamf Pro over third-party patch tools because it integrates natively with Apple's software update framework and doesn't require an additional agent.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Implementation</h2>
+      <ul class="space-y-3 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">Patch Policies:</strong> Tiered deployment rings — IT test group (Day 0), early adopters (Day 3), general fleet (Day 7). Critical zero-day patches bypass the ring structure and deploy immediately.</li>
+        <li><strong class="text-text">Smart Groups:</strong> Dynamic device groups based on OS version, last check-in, and patch compliance status. Devices automatically move between groups as they update.</li>
+        <li><strong class="text-text">Compliance Dashboards:</strong> Jamf Pro dashboards with real-time patch compliance percentages, overdue device lists, and trend data exported weekly to security leadership.</li>
+        <li><strong class="text-text">User Communication:</strong> Automated notifications via Jamf Self Service and Slack when updates are available, with deferral windows and enforced deadlines.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Result</h2>
+      <ul class="space-y-2 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">95%+ patch compliance</strong> within 7 days of release across the fleet.</li>
+        <li>Zero-day response time reduced from <strong class="text-text">days to hours</strong> — security leadership can confirm fleet status same-day.</li>
+        <li>Manual audit effort <strong class="text-text">eliminated entirely</strong> — compliance reports generated automatically.</li>
+        <li>User disruption minimized through <strong class="text-text">deferral windows and enforced-but-flexible deadlines</strong>.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Lessons Learned</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        The biggest friction wasn't the technology — it was user resistance to forced updates. We solved this with clear communication about security timelines and a "you can defer until X, then it's mandatory" policy. The deployment ring approach (IT first, early adopters, general fleet) caught several problematic patches before they reached the full fleet, saving significant support effort. Apple's DDM (Declarative Device Management) updates are the next frontier for even faster compliance.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-2">
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Jamf Pro</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">macOS</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">iOS</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Compliance</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Smart Groups</span>
+    </div>
+  </section>
+</CaseStudyLayout>

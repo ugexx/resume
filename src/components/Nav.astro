@@ -1,0 +1,39 @@
+<nav class="fixed top-0 left-0 right-0 z-[100] px-10 py-4 flex items-center justify-between bg-bg/85 backdrop-blur-[16px] border-b border-border text-[15px] max-md:px-5">
+  <a href="/" class="font-bold text-text text-lg tracking-[-0.02em] hover:opacity-100">
+    colton<span class="text-accent">.</span>fouch
+  </a>
+  <div class="flex gap-8 max-md:hidden">
+    <a href="/#case-studies" class="text-text-dim hover:text-accent transition-colors text-sm">Case Studies</a>
+    <a href="/#experience" class="text-text-dim hover:text-accent transition-colors text-sm">Experience</a>
+    <a href="/#stack" class="text-text-dim hover:text-accent transition-colors text-sm">Stack</a>
+    <a href="/#contact" class="text-text-dim hover:text-accent transition-colors text-sm">Contact</a>
+  </div>
+  <!-- Mobile hamburger -->
+  <button class="hidden max-md:flex flex-col gap-1 p-2" id="mobile-menu-btn" aria-label="Menu">
+    <span class="block w-5 h-0.5 bg-text transition-transform"></span>
+    <span class="block w-5 h-0.5 bg-text transition-opacity"></span>
+    <span class="block w-5 h-0.5 bg-text transition-transform"></span>
+  </button>
+</nav>
+
+<!-- Mobile menu (hidden by default) -->
+<div class="hidden fixed top-[60px] left-0 right-0 bg-bg/95 backdrop-blur-[16px] border-b border-border z-[99] px-5 py-4 flex flex-col gap-3 max-md:flex" id="mobile-menu" style="display:none">
+  <a href="/#case-studies" class="text-text-dim hover:text-accent transition-colors text-base py-1">Case Studies</a>
+  <a href="/#experience" class="text-text-dim hover:text-accent transition-colors text-base py-1">Experience</a>
+  <a href="/#stack" class="text-text-dim hover:text-accent transition-colors text-base py-1">Stack</a>
+  <a href="/#contact" class="text-text-dim hover:text-accent transition-colors text-base py-1">Contact</a>
+</div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const open = menu.style.display !== 'none';
+      menu.style.display = open ? 'none' : 'flex';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => { menu.style.display = 'none'; });
+    });
+  }
+</script>

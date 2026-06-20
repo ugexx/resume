@@ -1,0 +1,61 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+const title = "Content Caching Infrastructure";
+const description = "How I deployed Apple Content Caching servers across key network segments, dramatically reducing WAN bandwidth consumption and accelerating software delivery company-wide.";
+const metric = "WAN ↓";
+const metricLabel = "Bandwidth reduction";
+---
+
+<CaseStudyLayout title={title} description={description} metric={metric} metricLabel={metricLabel}>
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Problem</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        With 1,500+ macOS devices, every OS update and App Store download consumed WAN bandwidth. A single macOS major release (12GB+) multiplied by hundreds of devices during update week created significant network congestion. Remote offices with limited bandwidth were particularly affected — some updates took hours or failed entirely. The network team flagged software delivery as one of the top WAN bandwidth consumers.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Deployed Apple Content Caching on macOS servers at key network locations — headquarters and the largest remote offices. Content Caching is built into macOS and caches Apple software updates, App Store downloads, and iCloud data locally. Once one device downloads an update, all subsequent devices on the same network pull from the local cache instead of Apple's servers. This is a zero-cost solution that requires no additional hardware or software.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Implementation</h2>
+      <ul class="space-y-3 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">Server Placement:</strong> Deployed Content Caching on dedicated Mac mini servers at headquarters and three major regional offices. Each server handles its local subnet.</li>
+        <li><strong class="text-text">DNS/DHCP Configuration:</strong> Ensured proper DNS resolution so client devices automatically discover the local caching server via Apple's built-in discovery protocol.</li>
+        <li><strong class="text-text">Cache Sizing:</strong> Allocated 500GB–1TB cache storage per server, sufficient to hold the current macOS installer, Xcode updates, and commonly downloaded apps.</li>
+        <li><strong class="text-text">Monitoring:</strong> Enabled Content Caching metrics in Jamf Pro to track cache hit rates, bandwidth saved, and storage utilization.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Result</h2>
+      <ul class="space-y-2 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">Significant WAN bandwidth reduction</strong> during update cycles — major release rollouts no longer saturated branch office connections.</li>
+        <li>Software delivery times improved <strong class="text-text">3–5x</strong> for devices on cached networks.</li>
+        <li>Remote offices with limited bandwidth <strong class="text-text">no longer blocked</strong> by large updates.</li>
+        <li><strong class="text-text">Zero additional cost</strong> — Content Caching is built into macOS and required no new software licenses or hardware beyond repurposed Mac minis.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Lessons Learned</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Content Caching is one of the most underutilized macOS features in enterprise environments. The discovery protocol requires proper DNS configuration — clients must be able to resolve the caching server's hostname. We also learned that cache storage sizing matters: too small and the cache thrashes; too large and you waste disk. Monitoring cache hit rates through Jamf Pro helped us right-size each server. For offices with fewer than 20 Macs, Content Caching provides diminishing returns — we focused on the offices with 50+ devices.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-2">
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Content Caching</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">DNS/DHCP</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Apple</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Networking</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">macOS Server</span>
+    </div>
+  </section>
+</CaseStudyLayout>

@@ -1,0 +1,136 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+const title = "Platform SSO & Identity";
+const description = "How I implemented macOS Platform SSO with Secure Enclave-backed authentication and Jamf Connect, eliminating legacy password-based authentication across the enterprise.";
+const metric = "Passwordless";
+const metricLabel = "Authentication";
+---
+
+<CaseStudyLayout title={title} description={description} metric={metric} metricLabel={metricLabel}>
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Problem</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Patagonia's macOS fleet relied on traditional password-based authentication synced through Jamf Connect. Password resets were consistently the #1 IT ticket driver. Users regularly forgot passwords, got locked out, or used weak credentials. Shared credentials created security risks. Onboarding was slowed by password setup complexity. With 1,500+ Macs in the fleet, the cumulative support cost was significant.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Decision</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Adopted Platform SSO with Secure Enclave-backed authentication via Jamf Connect + Entra ID. This lets users authenticate with Touch ID on their Mac, and the Secure Enclave handles token exchange with Entra ID — no passwords stored or transmitted on the device. The architecture leverages Apple's hardware security to create a phishing-resistant authentication flow that also eliminates the password reset support burden.
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="bg-surface border border-border rounded-xl p-6 overflow-x-auto">
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-4">Architecture: Platform SSO Flow</h2>
+      <svg viewBox="0 0 840 420" class="w-full max-w-[840px]" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowSSO" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#BFA181" />
+          </marker>
+          <linearGradient id="boxGradSSO" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2D2D2D" />
+            <stop offset="100%" stop-color="#252525" />
+          </linearGradient>
+        </defs>
+
+        <rect width="840" height="420" rx="8" fill="#1C1C1C" />
+
+        <!-- macOS Device -->
+        <rect x="30" y="30" width="230" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
+        <text x="145" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="18" font-weight="700">macOS Device</text>
+
+        <!-- Touch ID box -->
+        <rect x="55" y="85" width="180" height="55" rx="4" fill="#1C1C1C" stroke="#444" stroke-width="1" />
+        <text x="145" y="108" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="12" font-weight="600">🔐 Touch ID</text>
+        <text x="145" y="127" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="10">User biometric auth</text>
+
+        <!-- Secure Enclave box -->
+        <rect x="55" y="150" width="180" height="60" rx="4" fill="rgba(191,161,129,0.1)" stroke="#BFA181" stroke-width="1" />
+        <text x="145" y="174" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="13" font-weight="700">Secure Enclave</text>
+        <text x="145" y="194" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="10">Token storage & exchange</text>
+
+        <!-- Arrow: macOS → Jamf Connect -->
+        <line x1="260" y1="130" x2="335" y2="130" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowSSO)" />
+
+        <!-- Jamf Connect -->
+        <rect x="345" y="30" width="180" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
+        <text x="435" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Jamf Connect</text>
+        <text x="435" y="110" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Local account</text>
+        <text x="435" y="128" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">creation & sync</text>
+        <text x="435" y="155" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Password-less</text>
+        <text x="435" y="173" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">enforcement</text>
+
+        <!-- Arrow: Jamf Connect → Entra ID -->
+        <line x1="525" y1="130" x2="600" y2="130" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowSSO)" />
+
+        <!-- Entra ID -->
+        <rect x="610" y="30" width="200" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
+        <text x="710" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Entra ID</text>
+        <text x="710" y="100" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Identity provider</text>
+        <text x="710" y="118" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Token validation</text>
+        <text x="710" y="145" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Conditional Access</text>
+        <text x="710" y="163" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">MFA policies</text>
+
+        <!-- Platform SSO result at bottom -->
+        <rect x="30" y="270" width="780" height="75" rx="6" fill="url(#boxGradSSO)" stroke="#BFA181" stroke-width="1.5" />
+
+        <text x="420" y="305" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Platform SSO — Single Sign-On Across All macOS Apps & Services</text>
+        <text x="420" y="330" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="12">No passwords stored on device · Phishing-resistant · Compliant with Zero Trust architecture</text>
+
+        <!-- Arrows from each to Platform SSO -->
+        <line x1="145" y1="230" x2="145" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
+        <line x1="435" y1="230" x2="435" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
+        <line x1="710" y1="230" x2="710" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
+
+        <!-- Security labels -->
+        <text x="145" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Hardware-backed</text>
+        <text x="435" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Least-privilege</text>
+        <text x="710" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Cloud-native</text>
+      </svg>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Implementation</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75] mb-4">
+        The rollout was phased across four stages:
+      </p>
+      <ul class="space-y-3 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li><strong class="text-text">Phase 1 — Jamf Connect Deployment:</strong> Deployed Jamf Connect to the entire fleet, establishing Entra ID as the identity provider and enabling local account creation synced with cloud credentials.</li>
+        <li><strong class="text-text">Phase 2 — Platform SSO Configuration:</strong> Configured Platform SSO payloads in Jamf Pro, targeting macOS Ventura+ devices. Registered the SSO extension with Entra ID and scoped to the macOS fleet.</li>
+        <li><strong class="text-text">Phase 3 — Pilot Group:</strong> Rolled out to a 50-user pilot group including IT staff and early adopters. Monitored authentication success rates, ticket volume, and user feedback.</li>
+        <li><strong class="text-text">Phase 4 — Fleet-Wide Rollout:</strong> Deployed to all 1,500+ Macs over 4 weeks. Communication campaign included Slack announcements, documentation, and office hours for questions.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Result</h2>
+      <ul class="space-y-2 list-disc list-inside text-[16px] text-text-dim leading-[1.7] pl-4">
+        <li>Password reset tickets <strong class="text-text">dropped dramatically</strong> — no longer the #1 IT ticket driver.</li>
+        <li><strong class="text-text">Zero credentials</strong> stored on-device outside the Secure Enclave.</li>
+        <li>Users authenticate with <strong class="text-text">Touch ID</strong> — faster and more secure than typing passwords.</li>
+        <li><strong class="text-text">Phishing-resistant</strong> authentication: hardware-bound tokens can't be stolen remotely.</li>
+        <li>Enabled <strong class="text-text">least-privilege admin access</strong> through Jamf Connect's privilege elevation.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-[13px] uppercase tracking-[0.12em] text-accent font-semibold mb-2">Lessons Learned</h2>
+      <p class="text-[16px] text-text-dim leading-[1.75]">
+        Change management was critical. Users accustomed to password-based login needed clear documentation and hands-on support during the transition. We learned that Platform SSO requires macOS Ventura minimum, which created a short-term OS upgrade push. Some legacy applications that relied on password-based auth needed compatibility shims. The biggest win: eliminating the psychological burden of password management for end users. The relief was immediate and measurable in ticket volume.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-2">
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Jamf Connect</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Platform SSO</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Entra ID</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Secure Enclave</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">macOS</span>
+      <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase">Touch ID</span>
+    </div>
+  </section>
+</CaseStudyLayout>

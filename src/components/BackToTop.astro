@@ -1,0 +1,29 @@
+<!-- Back to top -->
+<button id="back-to-top" class="fixed bottom-8 right-8 z-[100] w-10 h-10 rounded-full border border-border bg-surface/90 backdrop-blur-sm flex items-center justify-center text-text-dim hover:text-accent hover:border-accent transition-all duration-300 opacity-0 pointer-events-none translate-y-2" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <path d="M8 13V3M3 8l5-5 5 5"/>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  if (btn) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const pastHero = window.scrollY > window.innerHeight;
+          btn.classList.toggle('opacity-0', !pastHero);
+          btn.classList.toggle('pointer-events-none', !pastHero);
+          btn.classList.toggle('translate-y-2', !pastHero);
+          btn.classList.toggle('opacity-100', pastHero);
+          btn.classList.toggle('translate-y-0', pastHero);
+          btn.classList.toggle('pointer-events-auto', pastHero);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+</script>

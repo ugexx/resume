@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import CaseStudies from "../components/CaseStudies.astro";
 import ArchitectureDecisions from "../components/ArchitectureDecisions.astro";
@@ -19,7 +18,6 @@ const description =
 
 <Base title={title} description={description}>
   <ParticleCanvas />
-  <Nav />
   <Hero />
   <CaseStudies />
   <ArchitectureDecisions />
@@ -44,19 +42,5 @@ const description =
     );
 
     document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
-
-    // Active nav on scroll
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='/#']");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((s) => {
-        if (window.scrollY >= (s as HTMLElement).offsetTop - 200) current = s.id;
-      });
-      navLinks.forEach((l) => {
-        const href = l.getAttribute("href") || "";
-        l.classList.toggle("text-accent", href === "/#" + current);
-      });
-    });
   </script>
 </Base>

@@ -1,39 +1,82 @@
-<nav class="fixed top-0 left-0 right-0 z-[100] px-10 py-4 flex items-center justify-between bg-bg/85 backdrop-blur-[16px] border-b border-border text-[15px] max-md:px-5">
-  <a href="/" class="font-bold text-text text-lg tracking-[-0.02em] hover:opacity-100">
-    colton<span class="text-accent">.</span>fouch
-  </a>
-  <div class="flex gap-8 max-md:hidden">
-    <a href="/#case-studies" class="text-text-dim hover:text-accent transition-colors text-sm">Case Studies</a>
-    <a href="/#experience" class="text-text-dim hover:text-accent transition-colors text-sm">Experience</a>
-    <a href="/#stack" class="text-text-dim hover:text-accent transition-colors text-sm">Stack</a>
-    <a href="/#contact" class="text-text-dim hover:text-accent transition-colors text-sm">Contact</a>
-  </div>
-  <!-- Mobile hamburger -->
-  <button class="hidden max-md:flex flex-col gap-1 p-2" id="mobile-menu-btn" aria-label="Menu">
-    <span class="block w-5 h-0.5 bg-text transition-transform"></span>
-    <span class="block w-5 h-0.5 bg-text transition-opacity"></span>
-    <span class="block w-5 h-0.5 bg-text transition-transform"></span>
-  </button>
-</nav>
+---
+const links = [
+  { href: "/#work", label: "Work" },
+  { href: "/#decisions", label: "Decisions" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#contact", label: "Contact" },
+];
+---
 
-<!-- Mobile menu (hidden by default) -->
-<div class="hidden fixed top-[60px] left-0 right-0 bg-bg/95 backdrop-blur-[16px] border-b border-border z-[99] px-5 py-4 flex flex-col gap-3 max-md:flex" id="mobile-menu" style="display:none">
-  <a href="/#case-studies" class="text-text-dim hover:text-accent transition-colors text-base py-1">Case Studies</a>
-  <a href="/#experience" class="text-text-dim hover:text-accent transition-colors text-base py-1">Experience</a>
-  <a href="/#stack" class="text-text-dim hover:text-accent transition-colors text-base py-1">Stack</a>
-  <a href="/#contact" class="text-text-dim hover:text-accent transition-colors text-base py-1">Contact</a>
-</div>
+<header class="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
+  <div class="container-x h-[60px] flex items-center justify-between font-mono text-[13px]">
+    <a href="/" class="text-accent-text font-medium">&lt;colton /&gt;</a>
+
+    <nav aria-label="Primary" class="flex items-center gap-7 max-md:hidden">
+      {links.map((l) => (
+        <a href={l.href} class="nav-link text-text-dim hover:text-text transition-colors">{l.label}</a>
+      ))}
+    </nav>
+
+    <button
+      id="menu-btn"
+      class="md:hidden -mr-2 p-2 text-text-dim hover:text-text"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M3 6h14M3 10h14M3 14h14" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" aria-label="Mobile" class="md:hidden hidden border-t border-border">
+    <div class="container-x py-3 flex flex-col font-mono text-[14px]">
+      {links.map((l) => (
+        <a href={l.href} class="py-2.5 text-text-dim hover:text-text">{l.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
   if (btn && menu) {
-    btn.addEventListener('click', () => {
-      const open = menu.style.display !== 'none';
-      menu.style.display = open ? 'none' : 'flex';
-    });
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => { menu.style.display = 'none'; });
-    });
+    const setOpen = (open: boolean) => {
+      menu.classList.toggle("hidden", !open);
+      btn.setAttribute("aria-expanded", String(open));
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    btn.addEventListener("click", () => setOpen(menu.classList.contains("hidden")));
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  }
+
+  // Highlight the nav link for the section in view
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const sections = [...navLinks]
+    .map((a) => document.getElementById(a.hash.slice(1)))
+    .filter((s): s is HTMLElement => !!s);
+  if (sections.length) {
+    const setActive = (id: string) => {
+      navLinks.forEach((a) => {
+        const active = a.hash === `#${id}`;
+        a.classList.toggle("!text-accent-text", active);
+        if (active) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    };
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((s) => io.observe(s));
+    // The last section is too short to reach the middle band, so claim it at the bottom of the page
+    window.addEventListener("scroll", () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        setActive(sections[sections.length - 1].id);
+      }
+    }, { passive: true });
   }
 </script>

@@ -1,59 +1,78 @@
-<section class="min-h-screen flex items-center justify-center pt-24 pb-16" id="home">
-  <div class="max-w-[1080px] mx-auto px-8 relative z-[1] max-md:px-5">
-    <div class="grid grid-cols-[320px_1fr] gap-16 items-center max-md:grid-cols-1 max-md:gap-10 max-md:text-center">
-      <!-- Photo -->
-      <div class="anim">
-        <div class="w-[320px] h-[320px] rounded-full overflow-hidden border border-border/50 max-md:mx-auto max-md:w-[220px] max-md:h-[220px]">
-          <img src="/assets/profile.png" alt="Colton Fouch" class="w-full h-full object-cover" />
-        </div>
+---
+const facts = [
+  { key: "role", value: "Sr. Platform Manager, Patagonia" },
+  { key: "fleet", value: "2,000+ endpoints" },
+  { key: "mdm", value: "Jamf Pro + Intune" },
+  { key: "provisioning", value: "< 20 min, zero-touch" },
+  { key: "auth", value: "Platform SSO, passwordless" },
+  { key: "location", value: "Ventura, CA" },
+];
+---
+
+<section id="home" class="relative overflow-hidden border-b border-border">
+  <div class="grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="container-x relative grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center pt-[clamp(72px,12vh,140px)] pb-[clamp(72px,12vh,130px)]">
+    <div>
+      <p class="font-mono text-[13px] text-accent-text mb-6">/* Senior Platform Manager at Patagonia */</p>
+
+      <h1 class="text-[clamp(38px,5.4vw,64px)] font-semibold leading-[1.05] tracking-[-0.035em]">
+        <span class="block">Hi, I'm Colton Fouch.</span>
+        <span class="block text-text-dim">
+          <span id="typed" data-text="I keep 2,000+ people working.">I keep 2,000+ people working.</span><span class="cursor" aria-hidden="true"></span>
+        </span>
+      </h1>
+
+      <p class="mt-7 max-w-[54ch] text-[17px] leading-[1.7] text-text-dim">
+        I run endpoint strategy, identity, and live production infrastructure for a global hybrid workforce. Zero-touch deployment, passwordless sign-in, and town halls that don't drop.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="#work" class="btn btn-primary">
+          View case studies
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" /></svg>
+        </a>
+        <a href="mailto:info@coltonfouch.com" class="btn btn-ghost">info@coltonfouch.com</a>
       </div>
+    </div>
 
-      <!-- Content -->
-      <div>
-        <h1 class="anim delay-1 text-[clamp(42px,6vw,64px)] font-bold leading-[1.05] mb-3 tracking-[-0.025em]">
-          Colton Fouch
-        </h1>
-        <div class="anim delay-2 text-[20px] text-text-dim mb-6 font-medium">
-          Platform Manager at Patagonia
-        </div>
-        <p class="anim delay-3 text-[18px] text-text-dim max-w-[560px] leading-[1.7] mb-10">
-          I run the infrastructure that keeps 2,000+ Patagonia employees working — from zero-touch deployments to broadcast-grade live production.
-        </p>
-
-        <!-- Impact Metrics -->
-        <div class="anim delay-4 flex flex-wrap justify-center gap-x-10 gap-y-6 mb-10">
-          <div class="text-center">
-            <div class="text-[clamp(24px,3vw,32px)] font-bold text-text leading-none mb-1">2,000<span class="text-accent">+</span></div>
-            <div class="text-[11px] text-text-dim uppercase tracking-[0.1em] leading-tight">Endpoints</div>
-          </div>
-          <div class="text-center">
-            <div class="text-[clamp(24px,3vw,32px)] font-bold text-text leading-none mb-1">hours<span class="text-accent">→</span>20min</div>
-            <div class="text-[11px] text-text-dim uppercase tracking-[0.1em] leading-tight">Provisioning</div>
-          </div>
-          <div class="text-center">
-            <div class="text-[clamp(24px,3vw,32px)] font-bold text-text leading-none mb-1">7<span class="text-accent">+</span> years</div>
-            <div class="text-[11px] text-text-dim uppercase tracking-[0.1em] leading-tight">at Patagonia</div>
-          </div>
-          <div class="text-center">
-            <div class="text-[clamp(24px,3vw,32px)] font-bold text-text leading-none mb-1">Multi<span class="text-accent">-</span>platform</div>
-            <div class="text-[11px] text-text-dim uppercase tracking-[0.1em] leading-tight">Jamf + Intune + SCCM</div>
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="anim delay-4 flex gap-4 flex-wrap max-md:justify-center">
-          <a href="/#case-studies" class="inline-flex items-center px-6 py-3 bg-accent text-bg rounded-lg text-[15px] font-semibold tracking-[-0.01em] transition-all hover:opacity-90 hover:-translate-y-0.5">
-            View Case Studies
-            <span class="ml-2">↓</span>
-          </a>
-          <a href="mailto:info@coltonfouch.com" class="inline-flex items-center px-6 py-3 border border-border rounded-lg text-[15px] text-text-dim tracking-[-0.01em] transition-all hover:border-accent hover:text-accent">
-            info@coltonfouch.com
-          </a>
-          <a href="https://linkedin.com/in/coltonfouch" target="_blank" class="inline-flex items-center px-6 py-3 border border-border rounded-lg text-[15px] text-text-dim tracking-[-0.01em] transition-all hover:border-accent hover:text-accent">
-            LinkedIn
-          </a>
-        </div>
+    <!-- Terminal -->
+    <div class="card overflow-hidden shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] max-w-[520px] w-full lg:justify-self-end" aria-label="Profile summary">
+      <div class="flex items-center gap-2 px-4 h-10 border-b border-border bg-surface-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3a3a40]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3a3a40]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3a3a40]"></span>
+        <span class="ml-3 font-mono text-[12px] text-text-faint">colton@patagonia: ~</span>
+      </div>
+      <div class="p-5 font-mono text-[13px] leading-[1.9]">
+        <p><span class="text-accent-text">~</span> <span class="text-text-faint">$</span> whoami --verbose</p>
+        <dl class="mt-2 mb-3">
+          {facts.map((f) => (
+            <div class="grid grid-cols-[120px_1fr] max-[420px]:grid-cols-[96px_1fr]">
+              <dt class="text-text-faint">{f.key}</dt>
+              <dd class="text-text">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <p><span class="text-accent-text">~</span> <span class="text-text-faint">$</span> <span class="cursor !w-[8px] !h-[15px] !ml-0" aria-hidden="true"></span></p>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Type out the second headline line once. The full text is in the HTML, so no-JS and reduced-motion users see it immediately.
+  const el = document.getElementById("typed");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (el && !reduce) {
+    const text = el.dataset.text ?? "";
+    el.setAttribute("aria-label", text);
+    el.textContent = "";
+    let i = 0;
+    const tick = () => {
+      el.textContent = text.slice(0, ++i);
+      if (i < text.length) setTimeout(tick, 38 + Math.random() * 40);
+    };
+    setTimeout(tick, 450);
+  }
+</script>

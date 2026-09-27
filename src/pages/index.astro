@@ -1,48 +1,32 @@
 ---
 import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import CaseStudies from "../components/CaseStudies.astro";
 import ArchitectureDecisions from "../components/ArchitectureDecisions.astro";
+import CareerNarrative from "../components/CareerNarrative.astro";
 import Experience from "../components/Experience.astro";
 import Skills from "../components/Skills.astro";
-import CareerNarrative from "../components/CareerNarrative.astro";
 import Speaking from "../components/Speaking.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
-import ParticleCanvas from "../components/ParticleCanvas.astro";
-import BackToTop from "../components/BackToTop.astro";
 
-const title = "Colton Fouch — Platform Manager";
+const title = "Colton Fouch — Senior Platform Manager";
 const description =
-  "Platform Manager at Patagonia — MDM architect, endpoint strategist, and live production engineer based in Ventura, CA.";
+  "Senior Platform Manager at Patagonia — MDM architect, endpoint strategist, and live production engineer based in Ventura, CA.";
 ---
 
 <Base title={title} description={description}>
-  <ParticleCanvas />
-  <Hero />
-  <CaseStudies />
-  <ArchitectureDecisions />
-  <Experience />
-  <Skills />
-  <CareerNarrative />
-  <Speaking />
-  <Contact />
+  <Nav />
+  <main>
+    <Hero />
+    <CaseStudies />
+    <ArchitectureDecisions />
+    <CareerNarrative />
+    <Experience />
+    <Skills />
+    <Speaking />
+    <Contact />
+  </main>
   <Footer />
-  <BackToTop />
-
-  <script>
-    // Scroll-triggered animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
-  </script>
 </Base>

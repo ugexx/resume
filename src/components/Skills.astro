@@ -1,57 +1,55 @@
 ---
 interface Skill {
   cat: string;
-  items: string;
+  items: string[];
 }
 
 const skills: Skill[] = [
-  { cat: "MDM", items: "Jamf Pro · Jamf Connect · Intune · SCCM · Apple Business Manager" },
-  { cat: "Platforms", items: "macOS · iOS/iPadOS · Windows · Apple Silicon" },
-  { cat: "Infrastructure", items: "Active Directory · Entra ID · Palo Alto · DNS/DHCP · SSL Inspection" },
-  { cat: "Cloud", items: "Microsoft Azure · Jamf Cloud · Apple Business Manager" },
-  { cat: "Automation", items: "PowerShell · Bash · Copilot Studio · 1Password CLI" },
-  { cat: "Production", items: "OBS Studio · ProPresenter · Microsoft Teams · A/V Hardware" },
-  { cat: "Security", items: "Platform SSO · Secure Enclave · Patch Compliance · Least-Privilege" },
+  { cat: "mdm", items: ["Jamf Pro", "Jamf Connect", "Intune", "SCCM", "Apple Business Manager"] },
+  { cat: "platforms", items: ["macOS", "iOS/iPadOS", "Windows", "Apple Silicon"] },
+  { cat: "identity", items: ["Entra ID", "Active Directory", "Platform SSO", "Secure Enclave"] },
+  { cat: "network", items: ["Palo Alto", "DNS/DHCP", "SSL Inspection", "Content Caching"] },
+  { cat: "automation", items: ["PowerShell", "Bash", "Copilot Studio", "1Password CLI"] },
+  { cat: "production", items: ["OBS Studio", "ProPresenter", "Microsoft Teams", "A/V Hardware"] },
 ];
 
-interface Cert {
-  name: string;
-}
-
-const certs: Cert[] = [
-  { name: "Jamf Certified Tech" },
-  { name: "Jamf Certified Admin" },
-  { name: "CompTIA Network+" },
-];
+const certs = ["Jamf Certified Tech", "Jamf Certified Admin", "CompTIA Network+"];
 ---
 
-<section id="stack" class="py-[120px] max-md:py-20">
-  <div class="max-w-[1080px] mx-auto px-8 relative z-[1] max-md:px-5">
-    <div class="text-[12px] uppercase tracking-[0.2em] text-accent mb-2 anim font-semibold">Stack</div>
-    <h2 class="text-[clamp(30px,4vw,42px)] font-bold mb-4 leading-[1.15] anim delay-1">Technical Stack</h2>
-    <p class="text-text-dim text-[17px] mb-12 anim delay-2 max-w-[600px]">
-      Tools and platforms I work with daily across endpoint management, identity, automation, and production infrastructure.
-    </p>
+<section id="stack" class="container-x py-[clamp(48px,8vw,100px)]">
+  <h2 class="section-head">Stack</h2>
 
-    <div class="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-4 max-md:grid-cols-1">
-      {skills.map((skill, i) => (
-        <div class={`anim flex items-baseline gap-4 p-5 bg-surface border border-border rounded-lg transition-colors hover:border-accent/40 max-md:flex-col max-md:gap-1.5 ${i > 0 ? `delay-${Math.min(i, 4)}` : ""}`}>
-          <div class="text-[12px] uppercase tracking-[0.1em] text-accent font-semibold min-w-[130px] shrink-0 max-md:min-w-0">{skill.cat}</div>
-          <div class="text-[15px] text-text-dim leading-[1.5]">{skill.items}</div>
-        </div>
-      ))}
-    </div>
-
-    <div class="mt-16">
-      <div class="text-[12px] uppercase tracking-[0.2em] text-accent mb-2 anim font-semibold">Certifications</div>
-      <div class="flex flex-wrap gap-3 mt-4">
-        {certs.map((cert, i) => (
-          <div class={`anim inline-flex items-center gap-2 text-[14px] px-5 py-2.5 border border-border rounded-lg text-text-dim transition-all hover:border-accent hover:text-accent ${i > 0 ? `delay-${i}` : ""}`}>
-            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-            {cert.name}
+  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-4">
+    <!-- Rendered as a config file -->
+    <div class="card overflow-hidden">
+      <div class="flex items-center justify-between px-5 h-10 border-b border-border bg-surface-2 font-mono text-[12px] text-text-faint">
+        <span>stack.yaml</span>
+        <span>{skills.length} groups</span>
+      </div>
+      <dl class="p-5 font-mono text-[13px] leading-[1.85] overflow-x-auto">
+        {skills.map((s) => (
+          <div class="grid sm:grid-cols-[130px_1fr] gap-x-2">
+            <dt class="text-accent-text">{s.cat}:</dt>
+            <dd class="text-text-dim max-sm:pl-4 max-sm:mb-1.5">
+              [{s.items.map((item, i) => (
+                <><span class="text-text">{item}</span>{i < s.items.length - 1 && ", "}</>
+              ))}]
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
+    </div>
+
+    <div class="card p-5 flex flex-col">
+      <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint">certifications</h3>
+      <ul class="mt-4 flex flex-col">
+        {certs.map((c) => (
+          <li class="flex items-center gap-3 py-3 border-b border-border last:border-b-0 text-[15px]">
+            <svg class="text-accent-text shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" /></svg>
+            {c}
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>

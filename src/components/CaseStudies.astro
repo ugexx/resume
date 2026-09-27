@@ -3,8 +3,7 @@ interface CaseStudy {
   slug: string;
   title: string;
   summary: string;
-  metric: string;
-  metricLabel: string;
+  outcome: string;
   tags: string[];
 }
 
@@ -12,78 +11,62 @@ const studies: CaseStudy[] = [
   {
     slug: "zero-touch",
     title: "Zero-Touch Deployments",
-    summary: "Designed a fully automated macOS deployment workflow that eliminated manual imaging and reduced provisioning from hours to under 20 minutes across 2,000+ endpoints.",
-    metric: "hours → 20min",
-    metricLabel: "Provisioning time reduction",
+    summary: "A fully automated macOS deployment workflow that replaced manual imaging across 2,000+ endpoints.",
+    outcome: "Provisioning cut from hours to under 20 minutes",
     tags: ["Jamf Pro", "Apple Business Manager", "macOS", "Bash"],
   },
   {
     slug: "platform-sso",
     title: "Platform SSO & Identity",
-    summary: "Implemented macOS Platform SSO with Secure Enclave-backed authentication and Jamf Connect for least-privilege admin access, eliminating legacy password-based auth enterprise-wide.",
-    metric: "Passwordless",
-    metricLabel: "Authentication model",
-    tags: ["Jamf Connect", "Platform SSO", "Entra ID", "Secure Enclave"],
+    summary: "Secure Enclave-backed Platform SSO and Jamf Connect least-privilege admin, replacing password-based sign-in.",
+    outcome: "Passwordless sign-in, enterprise-wide",
+    tags: ["Jamf Connect", "Platform SSO", "Entra ID"],
   },
   {
     slug: "live-streaming",
     title: "Live Streaming Infrastructure",
-    summary: "Architected broadcast-grade live streaming for company-wide town halls, integrating OBS, ProPresenter, and Microsoft Teams for hybrid events reaching thousands of employees.",
-    metric: "Thousands",
-    metricLabel: "Employees reached per event",
-    tags: ["OBS Studio", "ProPresenter", "Microsoft Teams", "A/V Hardware"],
+    summary: "Broadcast-grade streaming for company-wide town halls, integrating OBS, ProPresenter, and Microsoft Teams.",
+    outcome: "Hybrid events reaching thousands of employees",
+    tags: ["OBS Studio", "ProPresenter", "Teams"],
   },
   {
     slug: "patch-automation",
     title: "Patch Automation",
-    summary: "Built macOS and iOS patch management strategy using Jamf Pro, automating compliance reporting and remediation workflows to maintain security posture across the fleet.",
-    metric: "Automated",
-    metricLabel: "Patch compliance workflow",
-    tags: ["Jamf Pro", "macOS", "iOS", "Compliance"],
+    summary: "macOS and iOS patch strategy in Jamf Pro with automated compliance reporting and remediation.",
+    outcome: "Hands-off patch compliance across the fleet",
+    tags: ["Jamf Pro", "macOS", "iOS"],
   },
   {
     slug: "content-caching",
-    title: "Content Caching Infrastructure",
-    summary: "Deployed Apple Content Caching servers across key network segments, dramatically reducing WAN bandwidth consumption and accelerating software delivery company-wide.",
-    metric: "WAN ↓",
-    metricLabel: "Bandwidth consumption",
-    tags: ["Content Caching", "DNS/DHCP", "Apple", "Networking"],
+    title: "Content Caching",
+    summary: "Apple Content Caching servers across key network segments to keep software delivery local.",
+    outcome: "Lower WAN bandwidth, faster installs",
+    tags: ["Content Caching", "DNS/DHCP", "Networking"],
   },
 ];
 ---
 
-<section id="case-studies" class="py-[120px] max-md:py-20">
-  <div class="max-w-[1080px] mx-auto px-8 relative z-[1] max-md:px-5">
-    <div class="text-[12px] uppercase tracking-[0.2em] text-accent mb-2 anim font-semibold">Case Studies</div>
-    <h2 class="text-[clamp(30px,4vw,42px)] font-bold mb-4 leading-[1.15] anim delay-1">Infrastructure at Scale</h2>
-    <p class="text-text-dim text-[17px] mb-12 anim delay-2 max-w-[600px]">
-      Detailed breakdowns of the problems I've solved, the architecture decisions I've made, and the measurable impact delivered.
-    </p>
+<section id="work" class="container-x py-[clamp(72px,10vw,120px)]">
+  <h2 class="section-head">Featured work</h2>
 
-    <div class="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-6">
-      {studies.map((study, i) => (
-        <a
-          href={`/case-studies/${study.slug}`}
-          class={`anim group bg-surface border border-border rounded-xl p-7 transition-all duration-300 hover:border-accent hover:-translate-y-1 flex flex-col ${i > 0 ? `delay-${Math.min(i, 4)}` : ""}`}
-        >
-          <!-- Metric badge -->
-          <div class="inline-flex items-center gap-2 self-start mb-4 px-3 py-1.5 bg-accent-dim border border-accent/20 rounded-lg">
-            <span class="text-accent text-[20px] font-bold leading-none">{study.metric}</span>
-            <span class="text-[11px] text-text-dim uppercase tracking-[0.06em] leading-tight">{study.metricLabel}</span>
-          </div>
-
-          <h3 class="text-xl font-bold mb-2.5 leading-[1.3] group-hover:text-accent transition-colors">{study.title}</h3>
-          <p class="text-[15px] text-text-dim leading-[1.65] mb-4 flex-1">{study.summary}</p>
-
-          <div class="flex flex-wrap gap-1.5 mt-auto">
-            {study.tags.map((tag) => (
-              <span class="font-mono text-[10px] tracking-[0.06em] px-2.5 py-1 border border-border rounded text-text-dim uppercase group-hover:border-accent/30 transition-colors">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </a>
-      ))}
-    </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {studies.map((s, i) => (
+      <a
+        href={`/case-studies/${s.slug}`}
+        class:list={["card p-6 flex flex-col", { "md:col-span-2": i === studies.length - 1 && studies.length % 2 === 1 }]}
+      >
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-mono text-[16px] font-medium tracking-[-0.01em]">{s.title}</h3>
+          <svg class="card-arrow shrink-0 text-text-faint mt-0.5" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+        </div>
+        <p class="mt-2.5 text-[14.5px] leading-[1.6] text-text-dim max-w-[60ch]">{s.summary}</p>
+        <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Stack">
+          {s.tags.map((t) => <li class="tag">{t}</li>)}
+        </ul>
+        <p class="mt-auto pt-5">
+          <span class="block border-t border-border pt-4 font-mono text-[12.5px] text-accent-text">// {s.outcome}</span>
+        </p>
+      </a>
+    ))}
   </div>
 </section>

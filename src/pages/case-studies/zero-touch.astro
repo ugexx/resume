@@ -29,58 +29,58 @@ const metricLabel = "Provisioning time";
       <svg viewBox="0 0 840 360" class="w-full max-w-[840px]" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arrowZT" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#BFA181" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="#6AA5EE" />
           </marker>
           <linearGradient id="boxGradZT" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2D2D2D" />
-            <stop offset="100%" stop-color="#252525" />
+            <stop offset="0%" stop-color="#1A1A1E" />
+            <stop offset="100%" stop-color="#141417" />
           </linearGradient>
         </defs>
 
         <!-- Background -->
-        <rect width="840" height="360" rx="8" fill="#1C1C1C" />
+        <rect width="840" height="360" rx="8" fill="#111113" />
 
         <!-- Step 1: ABM -->
-        <rect x="20" y="30" width="160" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
-        <text x="100" y="65" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Apple Business</text>
-        <text x="100" y="85" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Manager</text>
-        <text x="100" y="115" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Device purchase →</text>
-        <text x="100" y="132" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">auto-enrolled in MDM</text>
+        <rect x="20" y="30" width="160" height="140" rx="6" fill="url(#boxGradZT)" stroke="#2A2A30" stroke-width="1" />
+        <text x="100" y="65" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Apple Business</text>
+        <text x="100" y="85" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Manager</text>
+        <text x="100" y="115" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Device purchase →</text>
+        <text x="100" y="132" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">auto-enrolled in MDM</text>
 
         <!-- Arrow 1→2 -->
-        <line x1="180" y1="100" x2="245" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+        <line x1="180" y1="100" x2="245" y2="100" stroke="#6AA5EE" stroke-width="1.5" marker-end="url(#arrowZT)" />
 
         <!-- Step 2: Jamf Pro Enrollment -->
-        <rect x="255" y="30" width="170" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
-        <text x="340" y="55" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Jamf Pro</text>
-        <text x="340" y="75" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Enrollment</text>
-        <text x="340" y="105" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Setup Manager →</text>
-        <text x="340" y="122" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Prestage enrollment →</text>
-        <text x="340" y="139" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Device assigned to user</text>
+        <rect x="255" y="30" width="170" height="140" rx="6" fill="url(#boxGradZT)" stroke="#2A2A30" stroke-width="1" />
+        <text x="340" y="55" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Jamf Pro</text>
+        <text x="340" y="75" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Enrollment</text>
+        <text x="340" y="105" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Setup Manager →</text>
+        <text x="340" y="122" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Prestage enrollment →</text>
+        <text x="340" y="139" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Device assigned to user</text>
 
         <!-- Arrow 2→3 -->
-        <line x1="425" y1="100" x2="490" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+        <line x1="425" y1="100" x2="490" y2="100" stroke="#6AA5EE" stroke-width="1.5" marker-end="url(#arrowZT)" />
 
         <!-- Step 3: Configuration Profiles -->
-        <rect x="500" y="30" width="180" height="140" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
-        <text x="590" y="55" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Configuration</text>
-        <text x="590" y="75" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="14" font-weight="700">Profiles</text>
-        <text x="590" y="105" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Wi-Fi · VPN · Certificates</text>
-        <text x="590" y="122" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Security policies →</text>
-        <text x="590" y="139" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">App deployments</text>
+        <rect x="500" y="30" width="180" height="140" rx="6" fill="url(#boxGradZT)" stroke="#2A2A30" stroke-width="1" />
+        <text x="590" y="55" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Configuration</text>
+        <text x="590" y="75" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="14" font-weight="700">Profiles</text>
+        <text x="590" y="105" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Wi-Fi · VPN · Certificates</text>
+        <text x="590" y="122" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Security policies →</text>
+        <text x="590" y="139" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">App deployments</text>
 
         <!-- Arrow 3→4 -->
-        <line x1="680" y1="100" x2="745" y2="100" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowZT)" />
+        <line x1="680" y1="100" x2="745" y2="100" stroke="#6AA5EE" stroke-width="1.5" marker-end="url(#arrowZT)" />
 
         <!-- Step 4: User Login -->
-        <rect x="20" y="210" width="800" height="80" rx="6" fill="url(#boxGradZT)" stroke="#333" stroke-width="1" />
-        <text x="420" y="245" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">User Opens Mac → Entra ID Login → Platform SSO → Ready to Work</text>
-        <text x="420" y="270" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="12">Total time: &lt; 20 minutes · Zero IT touch · Secure Enclave-backed auth</text>
+        <rect x="20" y="210" width="800" height="80" rx="6" fill="url(#boxGradZT)" stroke="#2A2A30" stroke-width="1" />
+        <text x="420" y="245" text-anchor="middle" fill="#F4F4F4" font-family="Geist, sans-serif" font-size="16" font-weight="700">User Opens Mac → Entra ID Login → Platform SSO → Ready to Work</text>
+        <text x="420" y="270" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="12">Total time: &lt; 20 minutes · Zero IT touch · Secure Enclave-backed auth</text>
 
         <!-- Time indicators -->
-        <text x="100" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 1 of 4</text>
-        <text x="340" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 2 of 4</text>
-        <text x="590" y="185" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="10">Step 3 of 4</text>
+        <text x="100" y="185" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="10">Step 1 of 4</text>
+        <text x="340" y="185" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="10">Step 2 of 4</text>
+        <text x="590" y="185" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="10">Step 3 of 4</text>
       </svg>
     </div>
 

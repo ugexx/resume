@@ -29,67 +29,67 @@ const metricLabel = "Authentication";
       <svg viewBox="0 0 840 420" class="w-full max-w-[840px]" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arrowSSO" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#BFA181" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="#6AA5EE" />
           </marker>
           <linearGradient id="boxGradSSO" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2D2D2D" />
-            <stop offset="100%" stop-color="#252525" />
+            <stop offset="0%" stop-color="#1A1A1E" />
+            <stop offset="100%" stop-color="#141417" />
           </linearGradient>
         </defs>
 
-        <rect width="840" height="420" rx="8" fill="#1C1C1C" />
+        <rect width="840" height="420" rx="8" fill="#111113" />
 
         <!-- macOS Device -->
-        <rect x="30" y="30" width="230" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
-        <text x="145" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="18" font-weight="700">macOS Device</text>
+        <rect x="30" y="30" width="230" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#2A2A30" stroke-width="1" />
+        <text x="145" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Geist, sans-serif" font-size="18" font-weight="700">macOS Device</text>
 
         <!-- Touch ID box -->
-        <rect x="55" y="85" width="180" height="55" rx="4" fill="#1C1C1C" stroke="#444" stroke-width="1" />
-        <text x="145" y="108" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="12" font-weight="600">🔐 Touch ID</text>
-        <text x="145" y="127" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="10">User biometric auth</text>
+        <rect x="55" y="85" width="180" height="55" rx="4" fill="#111113" stroke="#444" stroke-width="1" />
+        <text x="145" y="108" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="12" font-weight="600">🔐 Touch ID</text>
+        <text x="145" y="127" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="10">User biometric auth</text>
 
         <!-- Secure Enclave box -->
-        <rect x="55" y="150" width="180" height="60" rx="4" fill="rgba(191,161,129,0.1)" stroke="#BFA181" stroke-width="1" />
-        <text x="145" y="174" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="13" font-weight="700">Secure Enclave</text>
-        <text x="145" y="194" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="10">Token storage & exchange</text>
+        <rect x="55" y="150" width="180" height="60" rx="4" fill="rgba(191,161,129,0.1)" stroke="#6AA5EE" stroke-width="1" />
+        <text x="145" y="174" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="13" font-weight="700">Secure Enclave</text>
+        <text x="145" y="194" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="10">Token storage & exchange</text>
 
         <!-- Arrow: macOS → Jamf Connect -->
-        <line x1="260" y1="130" x2="335" y2="130" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowSSO)" />
+        <line x1="260" y1="130" x2="335" y2="130" stroke="#6AA5EE" stroke-width="1.5" marker-end="url(#arrowSSO)" />
 
         <!-- Jamf Connect -->
-        <rect x="345" y="30" width="180" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
-        <text x="435" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Jamf Connect</text>
-        <text x="435" y="110" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Local account</text>
-        <text x="435" y="128" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">creation & sync</text>
-        <text x="435" y="155" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Password-less</text>
-        <text x="435" y="173" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">enforcement</text>
+        <rect x="345" y="30" width="180" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#2A2A30" stroke-width="1" />
+        <text x="435" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Geist, sans-serif" font-size="16" font-weight="700">Jamf Connect</text>
+        <text x="435" y="110" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Local account</text>
+        <text x="435" y="128" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">creation & sync</text>
+        <text x="435" y="155" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Password-less</text>
+        <text x="435" y="173" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">enforcement</text>
 
         <!-- Arrow: Jamf Connect → Entra ID -->
-        <line x1="525" y1="130" x2="600" y2="130" stroke="#BFA181" stroke-width="1.5" marker-end="url(#arrowSSO)" />
+        <line x1="525" y1="130" x2="600" y2="130" stroke="#6AA5EE" stroke-width="1.5" marker-end="url(#arrowSSO)" />
 
         <!-- Entra ID -->
-        <rect x="610" y="30" width="200" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#333" stroke-width="1" />
-        <text x="710" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Entra ID</text>
-        <text x="710" y="100" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Identity provider</text>
-        <text x="710" y="118" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Token validation</text>
-        <text x="710" y="145" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">Conditional Access</text>
-        <text x="710" y="163" text-anchor="middle" fill="#999" font-family="Inter, sans-serif" font-size="11">MFA policies</text>
+        <rect x="610" y="30" width="200" height="200" rx="8" fill="url(#boxGradSSO)" stroke="#2A2A30" stroke-width="1" />
+        <text x="710" y="65" text-anchor="middle" fill="#F4F4F4" font-family="Geist, sans-serif" font-size="16" font-weight="700">Entra ID</text>
+        <text x="710" y="100" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Identity provider</text>
+        <text x="710" y="118" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Token validation</text>
+        <text x="710" y="145" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">Conditional Access</text>
+        <text x="710" y="163" text-anchor="middle" fill="#999" font-family="Geist, sans-serif" font-size="11">MFA policies</text>
 
         <!-- Platform SSO result at bottom -->
-        <rect x="30" y="270" width="780" height="75" rx="6" fill="url(#boxGradSSO)" stroke="#BFA181" stroke-width="1.5" />
+        <rect x="30" y="270" width="780" height="75" rx="6" fill="url(#boxGradSSO)" stroke="#6AA5EE" stroke-width="1.5" />
 
-        <text x="420" y="305" text-anchor="middle" fill="#F4F4F4" font-family="Inter, sans-serif" font-size="16" font-weight="700">Platform SSO — Single Sign-On Across All macOS Apps & Services</text>
-        <text x="420" y="330" text-anchor="middle" fill="#BFA181" font-family="Inter, sans-serif" font-size="12">No passwords stored on device · Phishing-resistant · Compliant with Zero Trust architecture</text>
+        <text x="420" y="305" text-anchor="middle" fill="#F4F4F4" font-family="Geist, sans-serif" font-size="16" font-weight="700">Platform SSO — Single Sign-On Across All macOS Apps & Services</text>
+        <text x="420" y="330" text-anchor="middle" fill="#6AA5EE" font-family="Geist, sans-serif" font-size="12">No passwords stored on device · Phishing-resistant · Compliant with Zero Trust architecture</text>
 
         <!-- Arrows from each to Platform SSO -->
-        <line x1="145" y1="230" x2="145" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
-        <line x1="435" y1="230" x2="435" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
-        <line x1="710" y1="230" x2="710" y2="270" stroke="#BFA181" stroke-width="1" stroke-dasharray="4,3" />
+        <line x1="145" y1="230" x2="145" y2="270" stroke="#6AA5EE" stroke-width="1" stroke-dasharray="4,3" />
+        <line x1="435" y1="230" x2="435" y2="270" stroke="#6AA5EE" stroke-width="1" stroke-dasharray="4,3" />
+        <line x1="710" y1="230" x2="710" y2="270" stroke="#6AA5EE" stroke-width="1" stroke-dasharray="4,3" />
 
         <!-- Security labels -->
-        <text x="145" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Hardware-backed</text>
-        <text x="435" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Least-privilege</text>
-        <text x="710" y="370" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Cloud-native</text>
+        <text x="145" y="370" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="9">Hardware-backed</text>
+        <text x="435" y="370" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="9">Least-privilege</text>
+        <text x="710" y="370" text-anchor="middle" fill="#666" font-family="Geist, sans-serif" font-size="9">Cloud-native</text>
       </svg>
     </div>
 

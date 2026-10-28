@@ -94,11 +94,13 @@
         const pulse = 1 + Math.sin(this.time * 2 + dot.phase) * 0.12;
         alpha *= pulse;
 
-        // Sage green (#4A7C59) in rgb: 74, 124, 89
         this.ctx.beginPath();
         this.ctx.arc(dot.baseX, screenY, size, 0, Math.PI * 2);
-        this.ctx.fillStyle = `rgba(74,124,89,${Math.min(alpha, 0.85)})`;
+        this.ctx.save();
+        this.ctx.globalAlpha = Math.min(alpha, 0.85);
+        this.ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--fx-text-muted").trim();
         this.ctx.fill();
+        this.ctx.restore();
       }
 
       requestAnimationFrame(() => this.animate());

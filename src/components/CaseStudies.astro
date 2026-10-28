@@ -46,27 +46,28 @@ const studies: CaseStudy[] = [
 ];
 ---
 
-<section id="work" class="container-x py-[clamp(72px,10vw,120px)]">
-  <h2 class="section-head">Featured work</h2>
+<section id="work" class="section">
+  <div class="container-x">
+    <h2>Featured Work</h2>
 
-  <div class="grid md:grid-cols-2 gap-4">
-    {studies.map((s, i) => (
-      <a
-        href={`/case-studies/${s.slug}`}
-        class:list={["card p-6 flex flex-col", { "md:col-span-2": i === studies.length - 1 && studies.length % 2 === 1 }]}
-      >
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="font-mono text-[16px] font-medium tracking-[-0.01em]">{s.title}</h3>
-          <svg class="card-arrow shrink-0 text-text-faint mt-0.5" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
-        </div>
-        <p class="mt-2.5 text-[14.5px] leading-[1.6] text-text-dim max-w-[60ch]">{s.summary}</p>
-        <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Stack">
-          {s.tags.map((t) => <li class="tag">{t}</li>)}
-        </ul>
-        <p class="mt-auto pt-5">
-          <span class="block border-t border-border pt-4 font-mono text-[12.5px] text-accent-text">// {s.outcome}</span>
-        </p>
-      </a>
-    ))}
+    <ol class="work-list">
+      {studies.map((s) => (
+        <li>
+          <a href={`/case-studies/${s.slug}`} class="work-row">
+            <h3 class="work-title">
+              {s.title}
+              <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+            </h3>
+            <div class="work-copy">
+              <p class="work-summary">{s.summary}</p>
+              <ul class="tags" aria-label="Stack">
+                {s.tags.map((t) => <li class="tag">{t}</li>)}
+              </ul>
+            </div>
+            <p class="work-outcome">{s.outcome}</p>
+          </a>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>

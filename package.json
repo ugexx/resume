@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/check-hex.mjs && astro build",
+    "check:hex": "node scripts/check-hex.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

@@ -5,51 +5,42 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { cat: "mdm", items: ["Jamf Pro", "Jamf Connect", "Intune", "SCCM", "Apple Business Manager"] },
-  { cat: "platforms", items: ["macOS", "iOS/iPadOS", "Windows", "Apple Silicon"] },
-  { cat: "identity", items: ["Entra ID", "Active Directory", "Platform SSO", "Secure Enclave"] },
-  { cat: "network", items: ["Palo Alto", "DNS/DHCP", "SSL Inspection", "Content Caching"] },
-  { cat: "automation", items: ["PowerShell", "Bash", "Copilot Studio", "1Password CLI"] },
-  { cat: "production", items: ["OBS Studio", "ProPresenter", "Microsoft Teams", "A/V Hardware"] },
+  { cat: "MDM", items: ["Jamf Pro", "Jamf Connect", "Intune", "SCCM", "Apple Business Manager"] },
+  { cat: "Platforms", items: ["macOS", "iOS/iPadOS", "Windows", "Apple Silicon"] },
+  { cat: "Identity", items: ["Entra ID", "Active Directory", "Platform SSO", "Secure Enclave"] },
+  { cat: "Network", items: ["Palo Alto", "DNS/DHCP", "SSL Inspection", "Content Caching"] },
+  { cat: "Automation", items: ["PowerShell", "Bash", "Copilot Studio", "1Password CLI"] },
+  { cat: "Production", items: ["OBS Studio", "ProPresenter", "Microsoft Teams", "A/V Hardware"] },
 ];
 
 const certs = ["Jamf Certified Tech", "Jamf Certified Admin", "CompTIA Network+"];
 ---
 
-<section id="stack" class="container-x py-[clamp(48px,8vw,100px)]">
-  <h2 class="section-head">Stack</h2>
+<section id="stack" class="section">
+  <div class="container-x">
+    <h2>Stack</h2>
 
-  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-4">
-    <!-- Rendered as a config file -->
-    <div class="card overflow-hidden">
-      <div class="flex items-center justify-between px-5 h-10 border-b border-border bg-surface-2 font-mono text-[12px] text-text-faint">
-        <span>stack.yaml</span>
-        <span>{skills.length} groups</span>
-      </div>
-      <dl class="p-5 font-mono text-[13px] leading-[1.85] overflow-x-auto">
+    <div class="sheet">
+      <div class="skill-grid">
         {skills.map((s) => (
-          <div class="grid sm:grid-cols-[130px_1fr] gap-x-2">
-            <dt class="text-accent-text">{s.cat}:</dt>
-            <dd class="text-text-dim max-sm:pl-4 max-sm:mb-1.5">
-              [{s.items.map((item, i) => (
-                <><span class="text-text">{item}</span>{i < s.items.length - 1 && ", "}</>
-              ))}]
-            </dd>
+          <div>
+            <h3 class="skill-cat">{s.cat}</h3>
+            <p class="skill-items">{s.items.join(", ")}</p>
           </div>
         ))}
-      </dl>
-    </div>
+      </div>
 
-    <div class="card p-5 flex flex-col">
-      <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint">certifications</h3>
-      <ul class="mt-4 flex flex-col">
-        {certs.map((c) => (
-          <li class="flex items-center gap-3 py-3 border-b border-border last:border-b-0 text-[15px]">
-            <svg class="text-accent-text shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" /></svg>
-            {c}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <h3 class="skill-cat">Certifications</h3>
+        <ul class="certs">
+          {certs.map((c) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" /></svg>
+              {c}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

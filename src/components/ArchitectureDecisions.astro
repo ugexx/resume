@@ -39,51 +39,51 @@ const adrs: ADR[] = [
 ];
 ---
 
-<section id="decisions" class="container-x py-[clamp(48px,8vw,100px)]">
-  <h2 class="section-head">Architecture decisions</h2>
-  <p class="max-w-[62ch] text-[16px] leading-[1.7] text-text-dim -mt-2 mb-8">
-    The reasoning behind key infrastructure choices: context, the decision, what I turned down, and what it cost.
-  </p>
+<section id="decisions" class="section">
+  <div class="container-x">
+    <h2>Architecture Decisions</h2>
+    <p class="intro">
+      The reasoning behind key infrastructure choices: context, the decision, what I turned down, and what it cost.
+    </p>
 
-  <div class="flex flex-col gap-3">
-    {adrs.map((adr, i) => (
-      <details class="adr card" open={i === 0}>
-        <summary class="flex items-center gap-4 p-5 sm:p-6">
-          <svg class="chev shrink-0 text-text-faint" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
-          <span class="font-mono text-[12px] text-accent-text shrink-0 max-sm:hidden">{adr.id}</span>
-          <span class="flex-1 font-medium text-[16px] leading-snug">{adr.title}</span>
-          <span class="tag max-sm:hidden">{adr.status}</span>
-        </summary>
+    <div>
+      {adrs.map((adr, i) => (
+        <details class="adr" open={i === 0}>
+          <summary>
+            <svg class="chev" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+            <span class="adr-id">{adr.id}</span>
+            <span class="adr-title">{adr.title}</span>
+            <span class="tag">{adr.status}</span>
+          </summary>
 
-        <div class="px-5 sm:px-6 pb-7 pt-6 grid md:grid-cols-2 gap-x-10 gap-y-7 border-t border-border">
-          <div class="flex flex-col gap-6">
-            <div>
-              <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint mb-2">context</h3>
-              <p class="text-[15px] leading-[1.7] text-text-dim">{adr.context}</p>
+          <div class="adr-body">
+            <div class="adr-col">
+              <div>
+                <h3 class="adr-k">Context</h3>
+                <p>{adr.context}</p>
+              </div>
+              <div>
+                <h3 class="adr-k">Decision</h3>
+                <p class="decision">{adr.decision}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint mb-2">decision</h3>
-              <p class="text-[15px] leading-[1.7] text-text">{adr.decision}</p>
+            <div class="adr-col">
+              <div>
+                <h3 class="adr-k">Alternatives Considered</h3>
+                <ul>
+                  {adr.alternatives.map((alt) => (
+                    <li>{alt}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 class="adr-k">Consequences</h3>
+                <p>{adr.consequences}</p>
+              </div>
             </div>
           </div>
-          <div class="flex flex-col gap-6">
-            <div>
-              <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint mb-2">alternatives considered</h3>
-              <ul class="flex flex-col gap-2.5">
-                {adr.alternatives.map((alt) => (
-                  <li class="text-[15px] leading-[1.65] text-text-dim pl-5 relative">
-                    <span class="absolute left-0 font-mono text-text-faint" aria-hidden="true">-</span>{alt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 class="font-mono text-[12px] font-normal tracking-normal text-text-faint mb-2">consequences</h3>
-              <p class="text-[15px] leading-[1.7] text-text-dim">{adr.consequences}</p>
-            </div>
-          </div>
-        </div>
-      </details>
-    ))}
+        </details>
+      ))}
+    </div>
   </div>
 </section>

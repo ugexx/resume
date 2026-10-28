@@ -18,16 +18,18 @@ const items = [
 ];
 ---
 
-<section id="community" class="container-x py-[clamp(48px,8vw,100px)]">
-  <h2 class="section-head">Teaching &amp; community</h2>
+<section id="community" class="section">
+  <div class="container-x">
+    <h2>Teaching &amp; Community</h2>
 
-  <ul class="grid md:grid-cols-3 gap-4">
-    {items.map((it) => (
-      <li class="card p-6">
-        <p class="font-mono text-[12px] text-accent-text">{it.kind}</p>
-        <h3 class="mt-2 text-[17px] font-semibold tracking-[-0.015em]">{it.title}</h3>
-        <p class="mt-2.5 text-[14.5px] leading-[1.65] text-text-dim">{it.desc}</p>
-      </li>
-    ))}
-  </ul>
+    <ul class="teach">
+      {items.map((it) => (
+        <li>
+          <p class="kind">{it.kind}</p>
+          <h3>{it.title}</h3>
+          <p>{it.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
 </section>

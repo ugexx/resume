@@ -21,3 +21,6 @@ Thumbs.db
 
 # logs
 *.log
+
+# Local design skill. Not part of the site.
+.cursor/

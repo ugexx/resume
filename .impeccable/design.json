@@ -4,33 +4,103 @@
   "title": "Design System: FOUCH",
   "extensions": {
     "colorMeta": {
-      "night": { "role": "neutral", "displayName": "Night", "canonical": "#05070D" },
-      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#11141C" },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F4F1EA" },
-      "sunset-orange": { "role": "primary", "displayName": "Sunset Orange", "canonical": "#FF7F45" },
-      "adobe-cream": { "role": "neutral", "displayName": "Adobe Cream", "canonical": "#F1E6D2" },
-      "umber": { "role": "neutral", "displayName": "Umber", "canonical": "#3A2A1F" },
-      "low-sun": { "role": "primary", "displayName": "Low Sun", "canonical": "#B2533A" },
-      "low-sun-text": { "role": "primary", "displayName": "Low Sun text", "canonical": "#93412B" }
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#05070D"
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#11141C"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#F4F1EA"
+      },
+      "sunset-orange": {
+        "role": "primary",
+        "displayName": "Sunset Orange",
+        "canonical": "#FF7F45"
+      },
+      "adobe-cream": {
+        "role": "neutral",
+        "displayName": "Adobe Cream",
+        "canonical": "#F1E6D2"
+      },
+      "umber": {
+        "role": "neutral",
+        "displayName": "Umber",
+        "canonical": "#3A2A1F"
+      },
+      "low-sun": {
+        "role": "primary",
+        "displayName": "Low Sun",
+        "canonical": "#B2533A"
+      },
+      "low-sun-text": {
+        "role": "primary",
+        "displayName": "Low Sun text",
+        "canonical": "#93412B"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Archivo 800, width 112, for the name and section headings." },
-      "body": { "displayName": "Body", "purpose": "Inter for reading." },
-      "label": { "displayName": "Label", "purpose": "JetBrains Mono for nav, codes, and spec keys." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Archivo 800, width 112, for the name and section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inter for reading."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "JetBrains Mono for nav, codes, and spec keys."
+      }
     },
     "shadows": [
-      { "name": "card", "value": "0 1px 2px rgba(58,42,31,.08), 0 4px 12px rgba(58,42,31,.06)", "purpose": "Light theme cards only." },
-      { "name": "glow", "value": "0 0 24px rgba(255,127,69,.35), 0 0 4px rgba(255,127,69,.55)", "purpose": "One dark-theme glow, on the hero primary action." }
+      {
+        "name": "card",
+        "value": "0 1px 2px rgba(58,42,31,.08), 0 4px 12px rgba(58,42,31,.06)",
+        "purpose": "Light theme cards only."
+      },
+      {
+        "name": "glow",
+        "value": "0 0 24px rgba(255,127,69,.35), 0 0 4px rgba(255,127,69,.55)",
+        "purpose": "One dark-theme glow, on the hero primary action."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "The single plate entrance and press." },
-      { "name": "dur", "value": "300ms", "purpose": "Hover and press." },
-      { "name": "dur-slow", "value": "700ms", "purpose": "The record plate entrance. Zero under reduced motion." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "The single plate entrance and press."
+      },
+      {
+        "name": "dur",
+        "value": "300ms",
+        "purpose": "Hover and press."
+      },
+      {
+        "name": "dur-slow",
+        "value": "700ms",
+        "purpose": "The record plate entrance. Zero under reduced motion."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "540px" },
-      { "name": "md", "value": "800px" },
-      { "name": "lg", "value": "900px" }
+      {
+        "name": "sm",
+        "value": "540px"
+      },
+      {
+        "name": "md",
+        "value": "800px"
+      },
+      {
+        "name": "lg",
+        "value": "900px"
+      }
     ]
   },
   "components": [
@@ -60,11 +130,11 @@
     },
     {
       "name": "Tag",
-      "kind": "chip",
+      "kind": "text",
       "refersTo": "tag",
-      "description": "Stack and tool labels.",
-      "html": "<span class=\"ds-tag\">Jamf Pro</span>",
-      "css": ".ds-tag { font-family: var(--fx-font-mono); font-size: 11px; padding: 7px 8px; border-radius: 6px; border: 1px solid var(--fx-border); color: var(--fx-text-muted); }"
+      "description": "Stack and tool labels as a plain editorial middle-dot line (no chip boxes).",
+      "html": "<ul class=\"tags\" aria-label=\"Tools\"><li class=\"tag\">Jamf Pro<span class=\"tag-sep\" aria-hidden=\"true\">&nbsp;\u00b7&nbsp;</span></li><li class=\"tag\">Intune</li></ul>",
+      "css": ".tags { display:flex; flex-wrap:wrap; font-family:var(--fx-font-mono); font-size:var(--fx-text-xs); color:var(--fx-text-muted); list-style:none; margin:0; padding:0; } .tag-sep { color:var(--fx-border-strong); }"
     },
     {
       "name": "Record plate",
@@ -85,7 +155,11 @@
       "Borders in the dark. A soft offset shadow only in the light."
     ],
     "rules": [
-      { "name": "The One Accent Rule", "body": "Sunset Orange is not text and not a fill behind text on cream. Lavender and Lawn Teal stay out of the UI. One orange glow, on the hero primary action, and only in the dark theme.", "section": "colors" }
+      {
+        "name": "The One Accent Rule",
+        "body": "Sunset Orange is not text and not a fill behind text on cream. Lavender and Lawn Teal stay out of the UI. One orange glow, on the hero primary action, and only in the dark theme.",
+        "section": "colors"
+      }
     ],
     "dos": [
       "Do keep Night on orange and Low Sun on cream.",

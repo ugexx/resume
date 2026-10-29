@@ -19,7 +19,7 @@ OWN-WORLD: Night and Graphite, or Adobe Cream, with Archivo 800, Inter, JetBrain
 
 STORY: A visitor reads the name and the offer, sees the fleet facts, and opens the work or writes.
 
-FIRST VIEWPORT: Solid header with avatar chip, wordmark, mono nav, 0520, and a theme toggle. Below, the two-line display, the existing lede, View case studies as the primary action and the email as secondary, then a record plate with the full-body avatar in a cream well and the six whoami facts.
+FIRST VIEWPORT: Solid header with avatar chip, wordmark, mono nav, and a theme toggle. Below, the two-line display, the existing lede, View case studies as the primary action and the email as secondary, then a record plate with the full-body avatar in a cream well and the six whoami facts. No personal photo in About; tool tags render as a plain middle-dot editorial line.
 
 FORM: Brief-pinned FOUCH Studio / Cream Coast, the only candidate. seed: none (unavailable)
 

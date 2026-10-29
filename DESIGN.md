@@ -69,7 +69,7 @@ components:
 
 **Creative North Star: "Studio supply sheet."**
 
-The site is a night studio that switches to coast light. Night `#05070D` is the ground, Graphite holds the record, and Sunset Orange appears as the signature: the primary action, the `0520` mark, and one glow. Cream mode swaps the ground to Adobe Cream and the accent to Low Sun. The clay avatar and the FOUCH wordmark are the personal mark. The old blue terminal is not part of this system.
+The site is a night studio that switches to coast light. Night `#05070D` is the ground, Graphite holds the record, and Sunset Orange appears as the signature: the primary action and one glow. Cream mode swaps the ground to Adobe Cream and the accent to Low Sun. The clay avatar and the FOUCH wordmark are the personal mark. The old blue terminal is not part of this system.
 
 **Key Characteristics:**
 
@@ -90,11 +90,11 @@ All of these values live in `src/styles/tokens.css` as `--fx-*`. Components refe
 
 ## Typography
 
-Display and section headings use Archivo 800 with `font-variation-settings: 'wdth' 112`. Body is Inter at 16px, leads at 20px, measure about 68ch. Labels, nav, `0520`, and spec keys are JetBrains Mono. Headings and labels are Title Case. Body stays sentence case.
+Display and section headings use Archivo 800 with `font-variation-settings: 'wdth' 112`. Body is Inter at 16px, leads at 20px, measure about 68ch. Labels, nav, and spec keys are JetBrains Mono. Headings and labels are Title Case. Body stays sentence case.
 
 ## Layout
 
-A single column inside a 1120px container. The header is a solid bar: avatar chip, wordmark, mono nav, `0520`, theme toggle. The first viewport is the name, the offer, the two actions, then a record plate (cream avatar well plus the six facts). Later sections are a work index, decision disclosures, the about portrait, an experience ledger, one stack sheet, a teaching row, and a contact band. More space above a heading than below it.
+A single column inside a 1120px container. The header is a solid bar: avatar chip, wordmark, mono nav, theme toggle. The first viewport is the name, the offer, the two actions, then a record plate (cream avatar well plus the six facts). Later sections are a work index, decision disclosures, an about section, an experience ledger, one stack sheet, a teaching row, and a contact band. More space above a heading than below it.
 
 ## Elevation & Depth
 

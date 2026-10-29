@@ -59,7 +59,11 @@ const roles: Role[] = [
             <p class="role-place">{r.company}</p>
             <p class="role-desc">{r.desc}</p>
             <ul class="tags" aria-label="Tools">
-              {r.tags.map((t) => <li class="tag">{t}</li>)}
+              {r.tags.map((t, i) => (
+                <li class="tag">
+                  {t}{i < r.tags.length - 1 && <span class="tag-sep" aria-hidden="true">&nbsp;·&nbsp;</span>}
+                </li>
+              ))}
             </ul>
           </div>
         </li>

@@ -35,7 +35,7 @@ FOUCH brand system supplied with this rebrand (guide text is v2.3.0; the cream a
 
 ## Evidence on Hand
 
-Live copy is in `src/pages` and `src/components`. Portrait: `public/assets/colton.jpg`. Brand marks and the cream avatar are in `public/brand/`. Do not invent customers, benchmarks, or resume claims that are not already in those files.
+Live copy is in `src/pages` and `src/components`. Brand marks and the cream avatar are in `public/brand/`. Do not invent customers, benchmarks, or resume claims that are not already in those files.
 
 ## Product Principles
 

@@ -61,7 +61,11 @@ const studies: CaseStudy[] = [
             <div class="work-copy">
               <p class="work-summary">{s.summary}</p>
               <ul class="tags" aria-label="Stack">
-                {s.tags.map((t) => <li class="tag">{t}</li>)}
+                {s.tags.map((t, i) => (
+                  <li class="tag">
+                    {t}{i < s.tags.length - 1 && <span class="tag-sep" aria-hidden="true">&nbsp;·&nbsp;</span>}
+                  </li>
+                ))}
               </ul>
             </div>
             <p class="work-outcome">{s.outcome}</p>
